@@ -47,3 +47,33 @@ body {
   border-bottom: none !important;
 }
 /* --- 커스텀 끝 --- */
+/* --- 최후의 커스텀: 중앙 정렬 및 명조체 강제 적용 --- */
+
+// 1. 나눔명조 폰트 불러오기
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+// 2. 전체 폰트 강제 적용
+html, body, #main, .archive__item-title {
+  font-family: "Nanum Myeongjo", serif !important;
+}
+
+// 3. 본문 중앙 정렬 및 폭 제한 (a-round 스타일 핵심)
+#main {
+  max-width: 600px !important; // 폭을 더 좁게 해서 여백을 만듭니다
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+  float: none !important;      // 왼쪽 정렬 해제
+}
+
+// 4. 불필요한 여백 및 선 제거
+.page__title {
+  display: none !important;    // 'Recent Posts' 같은 제목 숨기기 (선택사항)
+}
+
+.archive__item-excerpt {
+  font-size: 0.9em;
+  color: #666;
+}
+/* --- 커스텀 끝 --- */
