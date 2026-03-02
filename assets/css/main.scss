@@ -7,3 +7,21 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/* 기본 폰트를 명조체로 변경 */
+body {
+    font-family: "Nanum Myeongjo", serif;
+    background-color: #fafafa; /* 완전 흰색보다 살짝 따뜻한 색 */
+  }
+  
+  /* 본문 폭을 좁게 해서 여백 만들기 */
+  .archive, .page {
+    max-width: 600px; 
+    margin: 0 auto;
+  }
+  
+  /* 제목 디자인 단순화 */
+  .archive__item-title {
+    font-weight: 400;
+    border-bottom: none;
+  }
