@@ -25,3 +25,61 @@ body {
     font-weight: 400;
     border-bottom: none;
   }
+
+  /* --- a-round 스타일 커스텀 시작 --- */
+
+// 1. 구글 폰트에서 나눔명조(Nanum Myeongjo) 불러오기
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+body {
+  font-family: "Nanum Myeongjo", serif !important;
+  background-color: #fdfdfd; // 아주 살짝 미색이 도는 흰색
+  color: #333;
+  line-height: 1.8; // 행간을 넓게 해서 가독성 높이기
+}
+
+// 2. 상단 헤더(Masthead) 단순화
+.masthead {
+  border-bottom: none !important; // 구분선 제거
+  padding: 3em 0 !important;
+  
+  .site-title {
+    font-weight: 400 !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 0.1em;
+  }
+  
+  .greedy-nav a {
+    font-size: 0.9rem;
+    color: #999 !important; // 메뉴 글씨를 연하게
+  }
+}
+
+// 3. 본문 폭 좁히기 (감성 블로그의 핵심 여백)
+.archive, .page, .single {
+  max-width: 700px !important; // 본문을 좁게 모음
+  margin: 0 auto !important;
+  float: none !important;
+  width: 100% !important;
+}
+
+// 4. 리스트 제목 디자인 (날짜와 제목만 깔끔하게)
+.archive__item-title {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  margin-bottom: 0.5em !important;
+  
+  a {
+    text-decoration: none !important;
+    color: #222 !important;
+    &:hover {
+      color: #888 !important;
+    }
+  }
+}
+
+.page__meta {
+  display: none !important; // 날짜 위 '분 읽기' 등 정보 숨김
+}
+
+/* --- 커스텀 끝 --- */
