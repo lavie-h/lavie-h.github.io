@@ -19,20 +19,20 @@ locale                   : "ko-kr"
 rtl                      : false
 title                    : "Lavie-h"
 title_separator          : "|"
-subtitle                 : false
+subtitle                 : ""
 name                     : "Lavie-h"
 description              : "Make a note"
 url                      : "https://lavie-h.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+baseurl                  : ""
+repository               : ""
+teaser                   : ""
+logo                     : ""
+masthead_title           : ""
 breadcrumbs              : false
 words_per_minute         : 200
 enable_copy_code_button  : false
-copyright                : # "copyright" name, defaults to site.title
-copyright_url            : # "copyright" URL, defaults to site.url
+copyright                : ""
+copyright_url            : ""
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
