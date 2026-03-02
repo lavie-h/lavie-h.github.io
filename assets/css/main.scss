@@ -25,4 +25,25 @@ body {
     font-weight: 400;
     border-bottom: none;
   }
-  
+  /* --- a-round 스타일 입히기 --- */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+body {
+  font-family: "Nanum Myeongjo", serif !important; // 명조체 적용
+  background-color: #fdfdfd; 
+  line-height: 2; // 줄 간격을 넓게 해서 여백미 강조
+}
+
+// 본문 폭을 좁게 해서 중앙으로 모으기
+.archive, .page, .single {
+  max-width: 650px !important; 
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+// 제목 디자인 단순화 (밑줄 제거 등)
+.archive__item-title {
+  font-weight: 400 !important;
+  border-bottom: none !important;
+}
+/* --- 커스텀 끝 --- */
