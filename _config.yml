@@ -221,10 +221,10 @@ kramdown:
   enable_coderay: false
 
 
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+# Sass/SCSS 설정 수정
+# sass:
+#   sass_dir: _sass  <-- 이 줄을 지우거나 앞에 #을 붙여서 꺼버리세요.
+#   style: compressed
 
 
 # Outputting
