@@ -114,9 +114,9 @@ analytics:
 # Site Author
 author:
   name             : "기록하는 사람"
-  avatar           : ""
-  bio              : ""
-  location         : ""
+  avatar           : []
+  bio              : []
+  location         : []
   email            : 
   links:
     - label: "Email"
