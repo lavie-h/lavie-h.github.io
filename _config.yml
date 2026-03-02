@@ -318,11 +318,9 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: false
+      author_profile: false # 이게 false여야 옆의 프로필이 사라집니다.
       sidebar:
         nav: []
-      read_time: false
-      comments: false
   - scope:
       path: ""
       type: pages
