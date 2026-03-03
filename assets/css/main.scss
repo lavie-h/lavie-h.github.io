@@ -109,3 +109,32 @@ body {
   font-size: 0.8em;
   text-align: center;
 }
+
+/* 1. 헤더(타이틀) 하단 여백 줄이기 */
+.masthead {
+  padding: 2em 0 0.5em 0 !important; /* 위쪽 2em, 아래쪽 0.5em으로 수정 */
+  border-bottom: none !important;
+}
+
+/* 2. 본문 영역 상단 여백 제거 */
+#main {
+  padding-top: 0 !important;      /* 본문 위쪽 패딩 제거 */
+  margin-top: 0 !important;       /* 본문 위쪽 마진 제거 */
+}
+
+/* 3. 개별 페이지/포스트 제목 영역의 여백 제거 */
+.page__title {
+  margin-top: 0 !important;       /* 페이지 제목이 있다면 그 위쪽 여백 제거 */
+  margin-bottom: 10px !important; /* 제목과 사진 사이 간격 */
+}
+
+/* 4. 본문 시작 지점의 여백 제거 */
+.page__content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 5. 피처드 이미지(꽉 찬 사진)가 맨 위에 올 경우의 여백 */
+.main-featured-image {
+  margin-top: 0 !important;
+}
