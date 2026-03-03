@@ -1,104 +1,92 @@
 ---
 ---
 
-/* 1. 테마 레이아웃 호출 */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* 2. 외부 폰트 (나눔명조) */
+/* 1. 기본 배경 및 나눔명조 강제 적용 */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
 
-/* 3. 기본 스타일 초기화 (파란색 방지 및 배경 설정) */
 body {
   background-color: #ffffff !important;
   font-family: "Nanum Myeongjo", serif !important;
-  color: #333 !important;
-  margin: 0;
-  padding: 0;
 }
 
-a { 
-  color: inherit !important; 
-  text-decoration: none !important; 
-}
-
-/* 4. 헤더 타이틀 중앙 정렬 */
-.masthead {
-  border: none !important;
-  background-color: #ffffff !important;
-  padding: 3em 0 !important;
-}
-
-.masthead__inner-nav {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
+/* 2. 사이트 메인 타이틀 가운데 정렬 (강력) */
+#site-nav, .masthead__inner-nav, .masthead {
   text-align: center !important;
 }
 
-.site-title {
-  font-weight: 700 !important;
-  margin-bottom: 0.5rem !important;
+.masthead__inner-nav {
   display: block !important;
+  width: 100% !important;
 }
 
-/* 5. 가로형 그리드 레이아웃 설정 */
-.archive, .entries-layout {
+.site-title {
+  display: block !important;
+  float: none !important; /* 기존 float 제거 */
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.masthead__menu {
+  float: none !important;
+  display: inline-block !important;
+  margin-top: 10px !important;
+}
+
+/* 3. 그리드 레이아웃 강제 활성화 */
+div.archive {
   display: flex !important;
+  flex-direction: row !important;
   flex-wrap: wrap !important;
   justify-content: flex-start !important;
-  gap: 30px 2% !important; /* 포스트 간 간격 */
-  margin-top: 40px !important;
+  gap: 30px 2% !important;
+  width: 100% !important;
 }
 
-.list__item {
-  width: 32% !important; /* 3열 정렬 */
-  margin: 0 !important;
-  list-style: none !important;
+/* 4. 개별 포스트 아이템 (3열 정렬) */
+.list__item, article.archive__item {
+  width: 31.33% !important; 
+  margin: 0 0 30px 0 !important;
+  float: none !important;
 }
 
-/* 6. 가로형 섬네일 이미지 비율 (16:9 비율) */
+/* 5. 가로형 섬네일 이미지 (16:9 비율) */
 .archive__item-teaser {
-  background-color: #f0f0f0;
-  margin-bottom: 12px !important;
-  overflow: hidden;
-  display: block;
+  max-height: none !important; /* 테마의 높이 제한 해제 */
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden !important;
+  margin-bottom: 10px !important;
 }
 
 .archive__item-teaser img {
   width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 16 / 9 !important; /* 가로가 긴 비율 */
+  height: 100% !important;
   object-fit: cover !important;
-  display: block;
+  display: block !important;
 }
 
-/* 7. 포스트 제목 중앙 정렬 */
-.archive__item-title {
+/* 6. 포스트 제목 가운데 정렬 */
+h2.archive__item-title {
   text-align: center !important;
   font-size: 0.9rem !important;
-  line-height: 1.4 !important;
   margin: 0 !important;
-  padding: 0 5px;
+  width: 100% !important;
 }
 
-/* 8. 모바일 대응 (반응형 2열) */
+h2.archive__item-title a {
+  color: #333 !important;
+}
+
+/* 7. 모바일 2열 전환 */
 @media (max-width: 768px) {
-  .list__item {
+  .list__item, article.archive__item {
     width: 49% !important;
   }
 }
 
-/* 불필요한 요소 제거 */
+/* 불필요 요소 제거 */
 .sidebar, .archive__subtitle, .page__meta, .archive__item-excerpt {
   display: none !important;
-}
-
-/* 푸터 초기화 */
-.page__footer {
-  border: none !important;
-  background-color: #ffffff !important;
-  text-align: center !important;
-  padding: 80px 0 !important;
-  opacity: 0.4;
 }
