@@ -1,4 +1,14 @@
 # Theme Settings
+# 이 줄이 빠져서 에러가 났습니다. 다시 넣어주세요!
+remote_theme: "mmistakes/minimal-mistakes" 
+minimal_mistakes_skin: "air"
+
+# Site Settings
+locale: "ko-kr"
+title: "lavie-h"
+# ... 이하 생략 ...
+
+# Theme Settings
 minimal_mistakes_skin: "air"
 
 # Site Settings
