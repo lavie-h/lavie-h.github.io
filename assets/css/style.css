@@ -1,475 +1,100 @@
-/* 폰트 불러오기 (나눔명조) */
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+/* =========================
+   0) BASE
+========================= */
+* { box-sizing: border-box; }
 
-:root {
-  --bg: #f7f4ef;
-  --bg-card: #ffffff;
-  --text: #222222;
-  --text-soft: #777777;
-  --border-subtle: #ece4da;
-  --accent: #c8b39a;
-  --max-width: 1080px;
+html, body { margin: 0; padding: 0; }
+
+body{
+  background: #f6f1e9;
+  color: #1a1a1a;
+  font-family: serif;
 }
 
-/* 기본 초기화 */
+/* 링크 기본 */
+a{ color: inherit; }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
-
-/* 페이지 전체 래퍼 */
-
-.page {
-  min-height: 100vh;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 24px 20px 40px;
-}
-
-/* 상단 헤더 */
-
-.top-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 14px;
-  margin-bottom: 26px;
-}
-
-.brand {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* 🔥 브랜드 텍스트만 가운데 정렬 */
-  gap: 4px;
-}
-
-.brand-title {
-  font-family: "Nanum Myeongjo", serif;
-  font-size: 20px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--text);
-}
-
-.brand-tagline {
-  margin: 0;
-  font-size: 12px;
-  color: var(--text-soft);
-}
-
-.top-nav {
-  display: flex;
-  gap: 16px;
-  font-size: 13px;
-}
-
-.top-nav a {
-  text-decoration: none;
-  color: var(--text-soft);
-}
-
-.top-nav a:hover {
-  color: var(--text);
-}
-
-/* 히어로 영역 */
-
-.hero {
-  display: grid;
-  grid-template-columns: 1.1fr 1.4fr;
-  gap: 40px;
-  align-items: center;
-  margin-top: 30px;
-}
-
-.hero-kicker {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--text-soft);
-}
-
-.hero-title {
-  font-family: "Nanum Myeongjo", serif;
-  font-size: 30px;
-  line-height: 1.5;
-  margin: 10px 0 12px;
-}
-
-.hero-desc {
-  font-size: 14px;
-  color: var(--text-soft);
-  margin: 0;
-}
-
-.hero-image {
-  width: 100%;
-}
-
-.hero-image-img {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-  border: 1px solid var(--border-subtle);
-  object-fit: cover;
-}
-/* PC 화면에서만 이미지 크기 고정 */
-@media (min-width: 1024px) {
-  .hero-image-img {
-    max-height: 380px;  /* PC에서 적당한 사이즈 */
-  }
-
-  .hero-image {
-    overflow: hidden;   /* 큰 사진을 자연스럽게 crop */
-  }
-}
-
-/* 섹션 공통 */
-
-.section {
-  margin-top: 56px;
-}
-
-.section-header h2 {
-  margin: 0 0 6px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.section-subtitle {
-  margin: 0;
-  font-size: 13px;
-  color: var(--text-soft);
-}
-
-/* 카드 그리드 */
-
-.card-grid {
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
-}
-
-/* Recently 썸네일 그리드 기본값: 모바일/태블릿 2열 */
-.recent-grid {
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);  /* 기본 2열 */
-  gap: 18px;
-}
-
-/* PC(데스크탑)에서 4열 유지 */
-@media (min-width: 1024px) {
-  .recent-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.card {
-  background: var(--bg-card);
-  border-radius: 14px;
-  border: 1px solid var(--border-subtle);
-  padding: 16px 16px 18px;
-  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(15, 10, 5, 0.05);
-}
-
-.card-title {
-  margin: 0 0 6px;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.card-meta {
-  margin: 0 0 8px;
-  font-size: 12px;
-  color: var(--text-soft);
-}
-
-.card-excerpt {
-  margin: 0;
-  font-size: 13px;
-  color: var(--text-soft);
-}
-
-/* 아카이브 리스트 */
-
-.section--archive {
-  margin-bottom: 40px;
-}
-
-.archive-list {
-  margin-top: 18px;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.archive-item {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border-subtle);
-  font-size: 13px;
-}
-
-.archive-date {
-  width: 80px;
-  color: var(--text-soft);
-}
-
-.archive-title {
-  flex: 1;
-}
-
-/* 푸터 */
-
-.page-footer {
-  margin-top: 40px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-subtle);
-  font-size: 12px;
-  color: var(--text-soft);
-}
-
-/* 반응형 */
-
-@media (max-width: 768px) {
-  .page {
-    padding: 18px 16px 32px;
-  }
-
-  .top-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .hero-title {
-    font-size: 24px;
-  }
-}
-/* All stories에서 링크 항목 스타일 */
-.archive-item-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.archive-item-link:hover {
-  background-color: rgba(0, 0, 0, 0.02);
-}
-/* Recently 썸네일 그리드 */
-
-@media (max-width: 480px) {
-  .recent-thumb img {
-    height: 140px;
-  }
-}
-
-.recent-card {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
-}
-
-.recent-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(15, 10, 5, 0.08);
-}
-
-.recent-thumb {
+/* =========================
+   1) HEADER (COMPACT)
+========================= */
+.top-header{
   position: relative;
-  width: 100%;
-  padding-top: 66%; /* 3:2 비율 정도 */
-  overflow: hidden;
-  border-radius: 14px;
-  background: #ddd;
+  padding: 14px 20px;   /* ✅ 헤더 높이: 여기서 결정 */
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.recent-thumb img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.recent-meta {
-  margin: 12px 0 4px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-soft);
-}
-
-.recent-title {
-  margin: 0 0 4px;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.recent-subtitle {
-  margin: 0;
-  font-size: 13px;
-  color: var(--text-soft);
-}
-/* 9. About 페이지 */
-
-.about-photo {
-  margin-bottom: 28px;
-}
-
-.about-photo img {
-  width: 100%;
-  border-radius: 18px;
-  display: block;
-  box-shadow: 0 16px 30px rgba(0,0,0,0.06);
-}
-
-.about {
-  max-width: 700px;
-  margin: 40px auto 60px;
-}
-
-.about-title {
-  font-size: 26px;
-  margin-bottom: 6px;
-}
-
-.about-subtitle {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 24px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.about-body p {
-  font-size: 15px;
-  margin-bottom: 20px;
-  color: #444;
-}
-
-.about-body a {
-  color: #444;
-  text-decoration: underline;
-}
-
-.about-contact {
-  margin-top: 32px;
-  font-size: 14px;
-}
-
-/* Recently grid fix */
-.recent-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  gap: 20px;
-}
-
-/* PC: 4 columns */
-@media (min-width: 1024px) {
-  .recent-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-}
-
-/* 어라운드 스타일 메인 배너 (full-bleed 느낌) */
-.hero-banner {
-  position: relative;
-  width: 100%;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--border-subtle);
-}
-
-.hero-banner-img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-banner-inner {
-  position: absolute;
-  left: 40px;
-  bottom: 40px;
-  color: #ffffff;
-}
-
-.hero-category {
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin: 0 0 10px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.hero-category::before {
-  content: "";
-  width: 42px;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.85);
-}
-
-.hero-caption {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.7;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
-}
-/* 가운데 정렬 이슈 타이틀 */
-.issue-header {
+/* 브랜드: 중앙 */
+.brand{
   text-align: center;
-  padding: 60px 0 40px;  /* 위를 넉넉하게 */
 }
 
-.issue-title {
-  margin: 0;
-  font-size: 18px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.brand-title{
+  display: block;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  font-size: 22px;      /* ✅ 타이틀 크기 */
+  line-height: 1.15;    /* ✅ 높이 줄이는데 중요 */
 }
 
-/* Recently 섹션을 약간 위로 끌어올리는 느낌 */
-.section--recent {
-  margin-top: -10px;   /* 살짝 겹치게 */
+.brand-tagline{
+  margin: 2px 0 0;      /* ✅ 여백 최소화 */
+  font-size: 11px;      /* ✅ 태그라인 작게 */
+  line-height: 1.2;
+  opacity: 0.7;
 }
-/* ===== Hamburger (mobile drawer menu) ===== */
 
-/* 기본: 데스크톱에서는 햄버거 숨김 */
-.hamburger { display: none; }
+/* 데스크톱 메뉴: 오른쪽 위 고정 */
+.top-nav{
+  position: absolute;
+  right: 20px;
+  top: 16px;            /* ✅ 메뉴가 헤더 안에서 너무 내려가면 높이 커 보임 */
+  display: flex;
+  gap: 22px;
+}
 
-/* 오버레이 & 드로어 기본은 숨김 상태 */
-.mobile-menu-overlay {
+.top-nav a{
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1;
+}
+
+
+/* =========================
+   2) HAMBURGER
+========================= */
+.hamburger{
+  display: none;        /* 기본: 데스크톱 숨김 */
+  position: absolute;
+  right: 20px;
+  top: 14px;            /* ✅ 헤더에 맞춰 위로 */
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.hamburger:hover{
+  background: rgba(0,0,0,0.05);
+}
+
+.hamburger__bar{
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 999px;
+  margin: 5px 0;
+}
+
+
+/* =========================
+   3) MOBILE DRAWER MENU
+========================= */
+.mobile-menu-overlay{
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.35);
@@ -479,13 +104,13 @@ body {
   z-index: 9998;
 }
 
-.mobile-menu {
+.mobile-menu{
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
   width: min(320px, 86vw);
-  background: #f6f1e9; /* 사이트 톤에 맞춰 따뜻한 베이지 */
+  background: #f6f1e9;
   transform: translateX(100%);
   transition: transform .25s ease;
   z-index: 9999;
@@ -503,8 +128,8 @@ body {
 }
 
 .mobile-menu__title{
-  font-size: 14px;
-  letter-spacing: .12em;
+  font-size: 12px;
+  letter-spacing: .14em;
   text-transform: uppercase;
   opacity: .75;
 }
@@ -519,7 +144,7 @@ body {
 
 .mobile-menu__links a{
   display: block;
-  padding: 12px 6px;
+  padding: 12px 8px;
   font-size: 16px;
   text-decoration: none;
   border-radius: 10px;
@@ -529,237 +154,54 @@ body {
   background: rgba(0,0,0,0.05);
 }
 
-/* 열렸을 때 상태 */
-.menu-open .mobile-menu-overlay{
+/* 열림 상태 */
+body.menu-open .mobile-menu-overlay{
   opacity: 1;
   pointer-events: auto;
 }
-.menu-open .mobile-menu{
+
+body.menu-open .mobile-menu{
   transform: translateX(0);
 }
 
-/* 메뉴 열리면 스크롤 잠금 */
-.no-scroll{
+body.no-scroll{
   overflow: hidden;
 }
 
-/* ===== Mobile only ===== */
+
+/* =========================
+   4) HERO / MAIN (네 기존 코드가 있으면 여기로 옮겨도 됨)
+========================= */
+/* 예시:
+.hero-banner{ position: relative; }
+.hero-banner-inner{
+  position:absolute;
+  left:40px;
+  bottom:40px;
+  color:#fff;
+}
+*/
+
+
+/* =========================
+   5) MOBILE
+========================= */
 @media (max-width: 768px){
-  /* 데스크톱 메뉴 숨기고 */
-  .top-nav--desktop{ display: none; }
+  /* 모바일: 데스크톱 메뉴 숨기고 햄버거 표시 */
+  .top-nav{ display: none; }
+  .hamburger{ display: inline-flex; }
 
-  /* 헤더 정렬 */
+  /* 모바일에서 헤더 더 슬림하게 */
   .top-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    padding: 12px 16px;  /* ✅ 모바일 헤더 높이 */
   }
 
-  /* 햄버거 보이기 */
-  .hamburger{
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    width: 42px;
-    height: 42px;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 12px;
-  }
-  .hamburger:hover{
-    background: rgba(0,0,0,0.05);
-  }
-  .hamburger__bar{
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: rgba(0,0,0,0.7);
-    border-radius: 999px;
-  }
-}
-/* =========================
-   HEADER
-========================= */
-
-.top-header{
-  position: relative;
-  padding: 16px 20px;
-}
-
-/* 브랜드 중앙 정렬 */
-.brand{
-  text-align: center;
-}
-
-.brand-title{
-  display: block;
-  font-size: 24px;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  color: inherit;
-}
-
-.brand-tagline{
-  font-size: 12px;
-  opacity: 0.7;
-  margin-top: 4px;
-}
-
-/* 데스크탑 메뉴 */
-.top-nav{
-  position: absolute;
-  right: 20px;
-  top: 32px;
-}
-
-.top-nav a{
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 14px;
-  color: inherit;
-}
-
-/* =========================
-   HAMBURGER
-========================= */
-
-.hamburger{
-  display: none;
-  position: absolute;
-  right: 20px;
-  top: 30px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.hamburger__bar{
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: #333;
-  margin: 5px 0;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width:768px){
-
-  .top-nav{
-    display: none;
+  .brand-title{
+    font-size: 20px;
   }
 
   .hamburger{
-    display: block;
+    right: 16px;
+    top: 10px;
   }
-
-}
-
-/* =========================
-   HEADER LAYOUT
-========================= */
-
-.top-header{
-  position: relative;
-  padding: 16px 20px;
-}
-
-/* 브랜드 중앙 */
-.brand{
-  text-align: center;
-}
-
-.brand-title{
-  display: block;
-  font-size: 24px;
-  text-decoration: none;
-  color: inherit;
-  letter-spacing: 0.05em;
-}
-
-.brand-tagline{
-  font-size: 12px;
-  opacity: 0.7;
-  margin-top: 2px;
-}
-
-/* 데스크탑 메뉴 (오른쪽) */
-.top-nav{
-  position: absolute;
-  right: 20px;
-  top: 30px;
-}
-
-.top-nav a{
-  text-decoration: none;
-  margin-left: 18px;
-  font-size: 14px;
-  color: inherit;
-}
-
-/* =========================
-   HAMBURGER
-========================= */
-
-.hamburger{
-  display: none;
-  position: absolute;
-  right: 20px;
-  top: 30px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.hamburger__bar{
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: #333;
-  margin: 5px 0;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width:768px){
-
-  .top-nav{
-    display: none;
-  }
-
-  .hamburger{
-    display: block;
-  }
-
-}
-
-/* header spacing fix */
-
-.top-header{
-  padding: 12px 20px;
-}
-
-/* 브랜드 타이틀 */
-.brand-title{
-  font-size: 20px;
-  line-height: 1.2;
-}
-
-/* tagline */
-.brand-tagline{
-  margin-top: 2px;
-  font-size: 11px;
-}
-
-/* 메뉴 위치도 조금 위로 */
-.top-nav{
-  top: 18px;
 }
