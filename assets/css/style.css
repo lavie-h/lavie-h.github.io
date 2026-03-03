@@ -740,3 +740,26 @@ body {
   }
 
 }
+
+/* header spacing fix */
+
+.top-header{
+  padding: 12px 20px;
+}
+
+/* 브랜드 타이틀 */
+.brand-title{
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/* tagline */
+.brand-tagline{
+  margin-top: 2px;
+  font-size: 11px;
+}
+
+/* 메뉴 위치도 조금 위로 */
+.top-nav{
+  top: 18px;
+}
