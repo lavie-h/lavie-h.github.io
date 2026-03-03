@@ -112,14 +112,14 @@ body {
 
 /* 1. 헤더(타이틀) 하단 여백 줄이기 */
 .masthead {
-  padding: 2em 0 0.5em 0 !important; /* 위쪽 2em, 아래쪽 0.5em으로 수정 */
+  padding: 0em 0 0em 0 !important; /* 위쪽 2em, 아래쪽 0.5em으로 수정 */
   border-bottom: none !important;
 }
 
 /* 2. 본문 영역 상단 여백 제거 */
 #main {
-  padding-top: 0 !important;      /* 본문 위쪽 패딩 제거 */
-  margin-top: 0 !important;       /* 본문 위쪽 마진 제거 */
+  padding-top: -10 !important;      /* 본문 위쪽 패딩 제거 */
+  margin-top: -10 !important;       /* 본문 위쪽 마진 제거 */
 }
 
 /* 3. 개별 페이지/포스트 제목 영역의 여백 제거 */
