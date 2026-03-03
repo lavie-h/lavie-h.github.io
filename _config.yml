@@ -1,7 +1,8 @@
-# 1. 테마 및 플러그인 (가장 중요)
+# 1. 테마 및 엔진 설정 (필수!)
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "air"
 
+# 2. 플러그인 설정 (이게 없으면 빌드 에러가 납니다)
 plugins:
   - jekyll-remote-theme
   - jekyll-paginate
@@ -9,31 +10,27 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
 
-# 2. 사이트 설정
-locale: "ko-kr"
-title: "lavie-h"
-name: "기록하는 사람"
-description: "Make a note"
+# 3. 사이트 정보 (사용자님이 적어주신 내용 반영)
+title: "Lavie H"
+description: "a quiet archive"
 url: "https://lavie-h.github.io"
 baseurl: ""
+repository: "lavie-h/lavie-h.github.io" # 사용자님의 레포지토리 이름
 
-# 3. 빌드 속도 향상을 위한 짐 덜어내기 (핵심!)
+# 4. 빌드 최적화 (무거운 샘플 파일 무시)
 exclude:
-  - docs/          # 샘플 문서 폴더 전체 제외
-  - test/          # 테스트 폴더 제외
+  - docs/
+  - test/
   - vendor/
-  - node_modules/
   - Gemfile
   - Gemfile.lock
-  - .sass-cache/
-  - .jekyll-cache/
 
-# 4. 기타 설정
+# 5. 시스템 설정
 timezone: Asia/Seoul
 markdown: kramdown
 highlighter: rouge
 
-# 5. 레이아웃 기본값
+# 6. 레이아웃 기본값 (사이드바 제거 및 중앙 정렬용)
 defaults:
   - scope:
       path: ""
