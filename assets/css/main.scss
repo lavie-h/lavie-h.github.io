@@ -1,47 +1,88 @@
-.year-title {
-  font-size: 0.8rem;
-  color: #bbb;
-  margin: 4rem 0 2rem 0;
-  font-weight: 400;
+/* ======================
+   CLEAN A-ROUND GRID
+====================== */
+
+/* 전체 폭 확장 */
+#main {
+  max-width: 1400px !important;
 }
 
-.year-grid {
+/* 히어로 이미지 */
+.hero-image img {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: block;
+  margin-bottom: 120px;
+}
+
+/* 연도 타이틀 */
+.year-title {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #bbb;
+  letter-spacing: 0.15em;
+  margin: 120px 0 60px 0;
+}
+
+/* 그리드 */
+.a-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px 30px;
+  column-gap: 60px;
+  row-gap: 120px;
 }
 
-.grid-card img {
+/* 썸네일 */
+.a-thumb img {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
+  transition: opacity 0.4s ease;
 }
 
-.grid-card h3 {
-  font-size: 0.95rem;
-  margin-top: 10px;
+.a-thumb:hover img {
+  opacity: 0.85;
 }
 
-.grid-card a {
+/* 제목 */
+.a-title {
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+.a-title a {
   text-decoration: none;
-  color: #333;
+  color: #222;
 }
 
-.post-date {
-  font-size: 0.7rem;
-  color: #ccc;
-  display: block;
-  margin-top: 5px;
+/* 날짜 */
+.a-date {
+  font-size: 0.65rem;
+  color: #aaa;
+  letter-spacing: 0.05em;
 }
 
-@media (max-width: 1024px) {
-  .year-grid {
+/* 반응형 */
+@media (max-width: 1100px) {
+  .a-grid {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 100px;
   }
 }
 
 @media (max-width: 600px) {
-  .year-grid {
+  .a-grid {
     grid-template-columns: 1fr;
+    row-gap: 80px;
+  }
+
+  .hero-image img {
+    margin-bottom: 80px;
+  }
+
+  .year-title {
+    margin: 80px 0 40px 0;
   }
 }

@@ -3,32 +3,32 @@ layout: default
 author_profile: false
 ---
 
-<div class="main-featured-image">
+<div class="hero-image">
   <img src="{{ '/assets/images/00001.JPG' | relative_url }}" alt="main photo">
 </div>
 
 {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
-<div class="year-wrapper">
+<div class="archive-wrap">
 {% for year in postsByYear %}
   <section class="year-section">
     <h2 class="year-title">{{ year.name }}</h2>
 
-    <div class="year-grid">
+    <div class="a-grid">
       {% for post in year.items %}
-      <article class="grid-card">
+      <article class="a-item">
 
         {% if post.header.teaser %}
-        <a href="{{ post.url | relative_url }}">
+        <a href="{{ post.url | relative_url }}" class="a-thumb">
           <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
         </a>
         {% endif %}
 
-        <h3>
+        <h3 class="a-title">
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </h3>
 
-        <span class="post-date">
+        <span class="a-date">
           {{ post.date | date: "%Y. %m. %d" }}
         </span>
 
