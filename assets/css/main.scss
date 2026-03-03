@@ -72,3 +72,18 @@ body {
   }
   &:hover { opacity: 0.6; } // 마우스 올렸을 때 은은하게
 }
+/* 메인 페이지 상단 이미지 여백 제거 */
+.home .page__content {
+  padding: 0 !important; // 기본 여백 제거
+}
+
+#main {
+  padding-top: 0 !important; // 상단 여백 제거
+}
+
+.main-featured-image {
+  /* 만약 화면 전체 너비로 꽉 채우고 싶다면 아래 주석을 해제하세요 */
+  /* margin-left: calc(-50vw + 50%);
+     margin-right: calc(-50vw + 50%);
+     width: 100vw; */
+}
