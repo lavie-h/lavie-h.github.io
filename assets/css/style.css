@@ -1,10 +1,256 @@
+/* 폰트 불러오기 (나눔명조) */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+:root {
+  --bg: #f7f4ef;
+  --bg-card: #ffffff;
+  --text: #222222;
+  --text-soft: #777777;
+  --border-subtle: #ece4da;
+  --accent: #c8b39a;
+  --max-width: 1080px;
+}
+
+/* 기본 초기화 */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
 body {
-    background: #fafafa;
-    font-family: "Nanum Myeongjo", serif;
-    padding: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* 페이지 전체 래퍼 */
+
+.page {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+/* 상단 헤더 */
+
+.top-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 14px;
+  margin-bottom: 26px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-title {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-tagline {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.top-nav {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: var(--text-soft);
+}
+
+.top-nav a:hover {
+  color: var(--text);
+}
+
+/* 히어로 영역 */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.hero-kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-soft);
+}
+
+.hero-title {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 30px;
+  line-height: 1.5;
+  margin: 10px 0 12px;
+}
+
+.hero-desc {
+  font-size: 14px;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  padding-top: 62%;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, #f1e7db, #f7f4ef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+/* 섹션 공통 */
+
+.section {
+  margin-top: 56px;
+}
+
+.section-header h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.section-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+/* 카드 그리드 */
+
+.card-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  padding: 16px 16px 18px;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(15, 10, 5, 0.05);
+}
+
+.card-title {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.card-meta {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.card-excerpt {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+/* 아카이브 리스트 */
+
+.section--archive {
+  margin-bottom: 40px;
+}
+
+.archive-list {
+  margin-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.archive-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 13px;
+}
+
+.archive-date {
+  width: 80px;
+  color: var(--text-soft);
+}
+
+.archive-title {
+  flex: 1;
+}
+
+/* 푸터 */
+
+.page-footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+/* 반응형 */
+
+@media (max-width: 768px) {
+  .page {
+    padding: 18px 16px 32px;
   }
-  
-  h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
+
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+}

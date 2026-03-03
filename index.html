@@ -2,14 +2,112 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Lavie H !</title>
+  <title>Lavie H · a quiet archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 우리가 만든 CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 
-  <h1>Lavie H</h1>
-  <p>a quiet archive</p>
+  <div class="page">
+    <!-- 상단 헤더 -->
+    <header class="top-header">
+      <div class="brand">
+        <a href="/" class="brand-title">Lavie H</a>
+        <p class="brand-tagline">a quiet archive</p>
+      </div>
+      <nav class="top-nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+
+    <!-- 메인 히어로 영역 -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="hero-kicker">a quiet archive</p>
+        <h1 class="hero-title">
+          일상의 조각을<br>
+          조용히 모아두는 공간
+        </h1>
+        <p class="hero-desc">
+          한 번 더 들여다보고 싶은 순간들을<br>
+          천천히 기록합니다.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <!-- 나중에 /assets/images/main.jpg 파일로 교체하면 됨 -->
+        <div class="hero-image-placeholder">
+          main.jpg
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 1: 에디터 픽 같은 느낌 -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Recently</h2>
+        <p class="section-subtitle">최근에 마음에 남았던 기록들</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3 class="card-title">첫 번째 기록</h3>
+          <p class="card-meta">2026.03.03 · Essay</p>
+          <p class="card-excerpt">
+            여기에는 인상 깊었던 하루의 짧은 메모가 들어갑니다.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">두 번째 기록</h3>
+          <p class="card-meta">2026.03.02 · Note</p>
+          <p class="card-excerpt">
+            아직 정리되지 않은 생각들을 가볍게 적어둡니다.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">세 번째 기록</h3>
+          <p class="card-meta">2026.02.27 · Photo</p>
+          <p class="card-excerpt">
+            지나가버리기 아쉬운 장면 한 장을 남겨둡니다.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 섹션 2: 전체 아카이브 예고용 -->
+    <section class="section section--archive">
+      <div class="section-header">
+        <h2>All stories</h2>
+        <p class="section-subtitle">
+          언젠가 천천히 채워질, 조용한 기록들.
+        </p>
+      </div>
+
+      <div class="archive-list">
+        <div class="archive-item">
+          <span class="archive-date">2026.03.03</span>
+          <span class="archive-title">처음 적어두는 인사</span>
+        </div>
+        <div class="archive-item">
+          <span class="archive-date">2026.03.02</span>
+          <span class="archive-title">조용한 밤의 메모</span>
+        </div>
+        <div class="archive-item">
+          <span class="archive-date">2026.02.27</span>
+          <span class="archive-title">창가에 머물던 오후 빛</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 하단 푸터 -->
+    <footer class="page-footer">
+      <p>© 2026 Lavie H · all rights reserved.</p>
+    </footer>
+  </div>
 
 </body>
 </html>
