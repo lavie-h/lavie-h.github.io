@@ -1,88 +1,43 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
-search: false
 ---
 
-@charset "utf-8";
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+/* --- 좁은 본문 해결 및 중앙 정렬 --- */
 
-/* 기본 폰트를 명조체로 변경 */
-body {
-    font-family: "Nanum Myeongjo", serif;
-    background-color: #fafafa; /* 완전 흰색보다 살짝 따뜻한 색 */
-  }
-  
-  /* 본문 폭을 좁게 해서 여백 만들기 */
-  .archive, .page {
-    max-width: 600px; 
-    margin: 0 auto;
-  }
-  
-  /* 제목 디자인 단순화 */
-  .archive__item-title {
-    font-weight: 400;
-    border-bottom: none;
-  }
-  /* --- a-round 스타일 입히기 --- */
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
-
-body {
-  font-family: "Nanum Myeongjo", serif !important; // 명조체 적용
-  background-color: #fdfdfd; 
-  line-height: 2; // 줄 간격을 넓게 해서 여백미 강조
-}
-
-// 본문 폭을 좁게 해서 중앙으로 모으기
-.archive, .page, .single {
-  max-width: 650px !important; 
+// 1. 전체 화면 구조 초기화 (사이드바 자리 없애기)
+.masthead, .page__inner-wrapper, .footer {
   margin: 0 auto !important;
+  max-width: 800px !important; // 전체적인 틀을 800px로 고정
+}
+
+// 2. 본문 영역을 전체 너비로 확장
+.page, .archive {
+  width: 100% !important;
   float: none !important;
+  padding-right: 0 !important; // 오른쪽 여백 강제 제거
 }
-
-// 제목 디자인 단순화 (밑줄 제거 등)
-.archive__item-title {
-  font-weight: 400 !important;
-  border-bottom: none !important;
-}
-/* --- 커스텀 끝 --- */
-/* --- 최후의 커스텀: 중앙 정렬 및 명조체 강제 적용 --- */
-
-// 1. 나눔명조 폰트 불러오기
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
-
-// 2. 전체 폰트 강제 적용
-html, body, #main, .archive__item-title {
-  font-family: "Nanum Myeongjo", serif !important;
-}
-
-// 3. 본문 중앙 정렬 및 폭 제한 (a-round 스타일 핵심)
-/* --- 글자 세로 꺾임 방지 및 폭 최적화 --- */
 
 #main {
+  padding-top: 2em !important;
   display: block !important;
-  max-width: 900px !important; /* 폭을 넉넉하게 늘립니다 */
-  margin: 0 auto !important;
-  padding: 40px 5% !important; /* 좌우 여백을 %로 주어 유연하게 대응 */
-  width: 90% !important;      /* 전체 너비 확보 */
 }
 
-/* 포스트 아이템들이 가로로 넓게 퍼지도록 설정 */
-.archive__item {
-  width: 100% !important;
-  margin-right: 0 !important;
+// 3. 폰트 및 텍스트 정렬
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+body {
+  font-family: "Nanum Myeongjo", serif !important;
+  word-break: keep-all !important;
 }
 
-/* 제목이 좁은 폭에 갇히지 않게 설정 */
 .archive__item-title {
-  word-break: keep-all !important; /* 단어 단위로 줄바꿈 */
-  white-space: normal !important;
-  line-height: 1.4 !important;
-  margin-top: 0.5em !important;
+  margin-top: 0 !important;
+  line-height: 1.6 !important;
 }
 
-/* 불필요한 레이아웃 초기화 */
-.sidebar {
+// 4. 불필요한 요소 제거
+.sidebar, .page__taxonomy {
   display: none !important;
 }
