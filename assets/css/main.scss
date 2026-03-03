@@ -299,6 +299,8 @@ body {
   width: 100% !important;
   height: auto !important;
   aspect-ratio: 3 / 4 !important; /* a-round 느낌의 세로 비율 */
+  object-fit: cover !important;
+}
 
 /* 4. 제목 스타일 (중앙 정렬) */
 .archive__item-title {
