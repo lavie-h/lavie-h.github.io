@@ -4,40 +4,33 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* --- 좁은 본문 해결 및 중앙 정렬 --- */
+/* --- 좁은 화면 강제 해결 --- */
 
-// 1. 전체 화면 구조 초기화 (사이드바 자리 없애기)
-.masthead, .page__inner-wrapper, .footer {
-  margin: 0 auto !important;
-  max-width: 800px !important; // 전체적인 틀을 800px로 고정
+// 1. 폰트 설정
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+body {
+  font-family: "Nanum Myeongjo", serif !important;
 }
 
-// 2. 본문 영역을 전체 너비로 확장
-.page, .archive {
-  width: 100% !important;
-  float: none !important;
-  padding-right: 0 !important; // 오른쪽 여백 강제 제거
+// 2. 사이드바가 차지하는 공간을 0으로 만들고 본문을 중앙으로!
+.sidebar {
+  display: none !important;
+}
+
+.archive, .page, .single {
+  width: 100% !important;   // 폭을 100% 다 써라
+  max-width: 800px !important; // 하지만 너무 넓으면 읽기 힘드니 800px까지만
+  margin: 0 auto !important;   // 그리고 중앙에 와라
+  padding-right: 0 !important; // 오른쪽 여백 제거
+  float: none !important;      // 옆으로 비키지 마라
+}
+
+// 3. 내부 레이아웃 래퍼 초기화
+.layout__sidebar {
+  display: block !important; // 그리드 시스템 해제
 }
 
 #main {
-  padding-top: 2em !important;
-  display: block !important;
-}
-
-// 3. 폰트 및 텍스트 정렬
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
-
-body {
-  font-family: "Nanum Myeongjo", serif !important;
-  word-break: keep-all !important;
-}
-
-.archive__item-title {
-  margin-top: 0 !important;
-  line-height: 1.6 !important;
-}
-
-// 4. 불필요한 요소 제거
-.sidebar, .page__taxonomy {
-  display: none !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
 }
