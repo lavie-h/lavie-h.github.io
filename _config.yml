@@ -317,7 +317,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: splash
       classes: wide  # 본문을 넓게 쓰도록 강제합니다
       author_profile: false
       sidebar:
@@ -326,7 +326,7 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: single
+      layout: splash
       classes: wide # 본문을 넓게 쓰도록 강제합니다
       author_profile: false
 
