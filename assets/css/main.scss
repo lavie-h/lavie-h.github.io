@@ -110,3 +110,36 @@ body {
   padding-top: 0 !important;
   overflow-x: hidden; // 가로 스크롤 방지
 }
+/* 1. 전체 컨테이너 너비를 넓게 조정 (좌우 여백 제거 효과) */
+.wrapper, .container, main {
+  max-width: 100% !important; /* 최대 너비 제한 해제 */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 auto;
+}
+
+/* 2. 홈페이지 제목(Lavie-h) 중앙 정렬 */
+header, .header, #header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 제목 텍스트 자체 스타일 */
+header h1, .site-title {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+/* 3. 사진(이미지)이 꽉 차게 보이도록 설정 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
