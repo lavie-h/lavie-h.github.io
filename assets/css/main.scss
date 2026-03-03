@@ -143,3 +143,35 @@ img {
   display: block;
   margin: 0 auto;
 }
+/* 1. 홈페이지 제목(Lavie-h) 중앙 정렬 */
+.site-title {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* 상단 네비게이션 바 전체를 중앙 정렬하고 싶을 때 */
+.masthead__inner-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 2. 사진 좌우 여백 제거 (참고 사이트 느낌 내기) */
+.page__content {
+  padding-right: 0 !important; /* 본문 우측 여백 제거 */
+}
+
+/* 컨테이너 최대 폭 제한 해제 (와이드 모드보다 더 넓게) */
+.archive, .page {
+  width: 100% !important;
+  max-width: 1200px; /* 원하시는 최대 폭으로 조절하세요 */
+}
+
+/* 3. 이미지 꽉 차게 만들기 */
+.page__content img {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
