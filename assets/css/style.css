@@ -270,11 +270,15 @@ body {
 }
 /* Recently 썸네일 그리드 */
 
-.recent-grid {
-  margin-top: 28px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 26px;
+@media (max-width: 480px) {
+  .recent-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; /* 모바일용 여백 조금 줄이기 추천 */
+  }
+
+  .recent-thumb img {
+    height: 140px; /* 모바일에서 썸네일 비율 예쁘게 */
+  }
 }
 
 .recent-card {
