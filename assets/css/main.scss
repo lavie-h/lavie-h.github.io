@@ -173,3 +173,38 @@ body {
   margin-top: 0 !important;
   top: 0 !important;
 }
+/* 1. 헤더 영역의 아래쪽 여백 아예 제거 */
+.masthead {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* 2. 네비게이션(메뉴) 하단 여백 제거 */
+.masthead__inner-nav {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* 3. 본문 전체 컨테이너 상단 여백 제거 */
+#main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* 4. 마크다운이 생성하는 첫 번째 문단(<p>)의 상단 여백 제거 */
+.page__content p:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 5. 본문 내부 모든 이미지의 상단 여백 제거 */
+.page__content img {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  display: block; /* 이미지 주변의 미세한 하단 공백 제거 */
+}
+
+/* 6. (중요) 혹시 남아있을지 모를 페이지 제목 영역 제거 */
+.page__header, .page__title {
+  display: none !important;
+}
