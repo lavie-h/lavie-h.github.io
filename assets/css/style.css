@@ -325,3 +325,49 @@ body {
   font-size: 13px;
   color: var(--text-soft);
 }
+/* 9. About 페이지 */
+
+.about-photo {
+  margin-bottom: 28px;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.06);
+}
+
+.about {
+  max-width: 700px;
+  margin: 40px auto 60px;
+}
+
+.about-title {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.about-subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 24px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-body p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.about-body a {
+  color: #444;
+  text-decoration: underline;
+}
+
+.about-contact {
+  margin-top: 32px;
+  font-size: 14px;
+}
