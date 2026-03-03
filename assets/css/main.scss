@@ -1,324 +1,54 @@
----
----
+/* ===== Archive Grid Clean Reset ===== */
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
-@import "minimal-mistakes";
-
-/* --- 1. 기본 배경 및 폰트 설정 --- */
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
-
-body {
-  background-color: #ffffff !important;
-  font-family: "Nanum Myeongjo", serif !important;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  color: #333;
-  letter-spacing: -0.01em;
-  overflow-x: hidden; // 가로 스크롤 방지
-}
-
-/* --- 2. 헤더(제목) 중앙 정렬 및 미니멀화 --- */
-.masthead {
-  border-bottom: none !important;
-  background-color: #ffffff !important;
-  padding: 3em 0 !important; // 상단 여백 확보
-}
-
-.masthead__inner-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center; // 메뉴와 제목 모두 중앙으로
-}
-
-.site-title {
-  display: block !important;
-  width: 100% !important;
-  text-align: center !important;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.masthead__menu-item {
-  font-weight: 400 !important;
-  font-size: 0.9em !important;
-  text-transform: lowercase;
-}
-
-/* --- 3. 레이아웃 최적화 (a-round 스타일) --- */
-.sidebar { display: none !important; } // 사이드바 제거
-
-#main {
-  padding: 0 20px !important; // 최소한의 좌우 안전 여백만 남김
-  max-width: 1200px !important; // 전체적인 가로폭 확장 (참고 사이트 느낌)
-  margin: 0 auto !important;
-  float: none !important;
-  width: 100% !important;
-}
-
-.archive, .page, .single {
-  width: 100% !important;
+/* 1. 기본 float 제거 */
+.archive__item,
+.list__item {
   float: none !important;
 }
 
-/* --- 4. 이미지 및 콘텐츠 꽉 채우기 --- */
-.page__content {
-  padding-right: 0 !important;
-  
-  // 포스트 내부 이미지가 부모 너비를 가득 채우도록
-  img {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    margin: 1em auto !important;
-    border-radius: 0 !important;
-  }
+/* 2. 포스트 리스트를 Grid로 변환 */
+.entries-list {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
 }
 
-/* 메인 피처드 이미지 (화면 끝까지 꽉 채우는 효과) */
-.main-featured-image {
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
-  width: 100vw !important;
-  position: relative;
-  left: 0;
-  overflow: hidden;
+/* 3. 각 포스트 카드 */
+.archive__item {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* --- 5. 글 목록 및 푸터 스타일 --- */
-.archive__subtitle {
-  border: none !important;
-  font-size: 0.8em !important;
-  color: #bbb !important;
-  margin-top: 4em !important;
+/* 4. 썸네일 이미지 */
+.archive__item-teaser img {
+  width: 100% !important;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
+/* 5. 제목 중앙정렬 */
 .archive__item-title {
-  transition: opacity 0.3s;
-  a {
-    color: #333 !important;
-    text-decoration: none !important;
-  }
-  &:hover { opacity: 0.6; }
+  text-align: center !important;
+  font-size: 0.9em;
+  margin-top: 10px;
 }
 
-.page__footer {
-  border-top: none !important;
-  background-color: #ffffff !important;
-  opacity: 0.3;
-  margin-top: 100px !important;
-  font-size: 0.8em;
-  text-align: center;
-}
-
-/* 1. 헤더(타이틀) 하단 여백 줄이기 */
-.masthead {
-  padding: 0em 0 0em 0 !important; /* 위쪽 2em, 아래쪽 0.5em으로 수정 */
-  border-bottom: none !important;
-}
-
-/* 2. 본문 영역 상단 여백 제거 */
-#main {
-  padding-top: -10 !important;      /* 본문 위쪽 패딩 제거 */
-  margin-top: -10 !important;       /* 본문 위쪽 마진 제거 */
-}
-
-/* 3. 개별 페이지/포스트 제목 영역의 여백 제거 */
-.page__title {
-  margin-top: 0 !important;       /* 페이지 제목이 있다면 그 위쪽 여백 제거 */
-  margin-bottom: 10px !important; /* 제목과 사진 사이 간격 */
-}
-
-/* 4. 본문 시작 지점의 여백 제거 */
-.page__content {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* 5. 피처드 이미지(꽉 찬 사진)가 맨 위에 올 경우의 여백 */
-.main-featured-image {
-  margin-top: 0 !important;
-}
-/* 1. 헤더 영역 자체의 높이와 아래쪽 여백 최소화 */
-.masthead {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-  border-bottom: none !important;
-}
-
-/* 2. 네비게이션 메뉴 하단 여백 제거 */
-.masthead__inner-nav {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* 3. 본문 컨테이너(#main) 상단 여백 강제 제거 */
-#main {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* 4. 본문 내부의 첫 번째 요소(사진 등) 상단 여백 제거 */
-.page__content {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* 5. 만약 페이지 제목(h1)이 자동 생성되어 간격을 벌리고 있다면 제거 */
-.page__title {
-  display: none !important; /* 제목 텍스트를 아예 안 쓰실 경우 */
-}
-
-/* 6. 피처드 이미지(이미지 꽉 채우기용) 상단 마진 제거 */
-.main-featured-image {
-  margin-top: 0 !important;
-  top: 0 !important;
-}
-/* 1. 헤더 영역의 아래쪽 여백 아예 제거 */
-.masthead {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-/* 2. 네비게이션(메뉴) 하단 여백 제거 */
-.masthead__inner-nav {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-/* 3. 본문 전체 컨테이너 상단 여백 제거 */
-#main {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* 4. 마크다운이 생성하는 첫 번째 문단(<p>)의 상단 여백 제거 */
-.page__content p:first-child {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* 5. 본문 내부 모든 이미지의 상단 여백 제거 */
-.page__content img {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  display: block; /* 이미지 주변의 미세한 하단 공백 제거 */
-}
-
-/* 6. (중요) 혹시 남아있을지 모를 페이지 제목 영역 제거 */
-.page__header, .page__title {
+/* 6. 날짜 숨기기 (선택) */
+.page__meta {
   display: none !important;
 }
-/* --- 포스트 목록을 3열 그리드로 강제 전환 --- */
-.entries-grid, 
-.archive__item {
-  float: none !important;
-  width: 100% !important;
-}
 
-/* 2026(연도) 아래의 리스트를 그리드로 변환 */
-.list__item {
-  display: inline-block;
-  width: 32% !important; /* 3열 정렬 */
-  margin-right: 1.3% !important;
-  vertical-align: top;
-  margin-bottom: 30px !important;
-}
+/* ===== 반응형 ===== */
 
-.list__item:nth-child(3n) {
-  margin-right: 0 !important;
-}
-
-/* 썸네일 이미지 비율 고정 (a-round 스타일) */
-.list__item .teaser img {
-  width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 1 / 1.2; /* 세로가 약간 긴 비율, 정사각형 원하면 1/1 */
-  object-fit: cover;
-  border-radius: 0 !important;
-}
-
-/* 제목 및 날짜 스타일 정리 */
-.list__item .archive__item-title {
-  font-size: 0.85em !important;
-  margin-top: 10px !important;
-  text-align: center;
-}
-
-.list__item .page__meta {
-  display: none !important; /* 날짜 숨기기 (선택사항) */
-}
-
-/* 모바일 대응 (화면이 작아지면 2열로) */
-@media (max-width: 768px) {
-  .list__item {
-    width: 48% !important;
-    margin-right: 4% !important;
-  }
-  .list__item:nth-child(2n) {
-    margin-right: 0 !important;
+@media (max-width: 1024px) {
+  .entries-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-/* 1. 아카이브 리스트 컨테이너를 그리드로 강제 전환 */
-.archive {
-  display: block !important;
-  width: 100% !important;
-}
 
-/* 포스트들을 감싸는 실제 박스 찾기 */
-.entries-list, 
-.list__wrapper,
-#main .page__content {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-  justify-content: flex-start !important;
-  gap: 20px !important; /* 포스트 간 간격 */
-  padding: 0 !important;
-}
-
-/* 2. 개별 포스트 항목 (세로로 나오던 것들) */
-.list__item, 
-.archive__item {
-  width: calc(33.333% - 14px) !important; /* 3열 강제 고정 */
-  margin: 0 0 40px 0 !important;
-  padding: 0 !important;
-  display: block !important;
-  float: none !important;
-}
-
-/* 3. 썸네일(이미지) 박스 조절 */
-.archive__item-teaser,
-.list__item .teaser {
-  width: 100% !important;
-  max-height: none !important;
-  margin: 0 0 10px 0 !important;
-}
-
-.archive__item-teaser img,
-.list__item .teaser img {
-  width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 3 / 4 !important; /* a-round 느낌의 세로 비율 */
-
-/* 4. 제목 스타일 (중앙 정렬) */
-.archive__item-title {
-  text-align: center !important;
-  font-size: 0.9em !important;
-  margin: 10px 0 0 0 !important;
-  width: 100% !important;
-}
-
-/* 5. 메인 본문의 첫 사진(큰 사진)은 그리드에서 제외 */
-/* 만약 메인 상단 큰 사진도 그리드에 들어간다면 이 코드가 필요합니다 */
-.page__content > img:first-child,
-.main-featured-image {
-  width: 100vw !important;
-  flex-basis: 100% !important; 
-}
-
-/* 모바일 대응 */
-@media (max-width: 768px) {
-  .list__item, .archive__item {
-    width: calc(50% - 10px) !important; /* 2열 */
+@media (max-width: 600px) {
+  .entries-list {
+    grid-template-columns: 1fr;
   }
 }
