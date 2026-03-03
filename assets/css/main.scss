@@ -242,3 +242,39 @@ body {
   aspect-ratio: 1 / 1; /* 정사각형으로 강제 통일 */
   object-fit: cover;   /* 이미지가 찌그러지지 않게 채움 */
 }
+/* --- 포스트 목록 그리드 최적화 --- */
+.entries-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* 3개의 포스트를 3열로 */
+  gap: 10px !important; /* 사진 사이 간격 (딱 붙이려면 0) */
+  width: 100% !important;
+  margin-top: 20px !important;
+}
+
+/* 개별 포스트 아이템 설정 */
+.grid__item {
+  margin-bottom: 0 !important;
+  width: 100% !important;
+}
+
+/* 포스트 썸네일 이미지 꽉 채우기 */
+.grid__item .teaser img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 5; /* 참고 사이트와 비슷한 느낌의 세로형 비율 */
+  object-fit: cover;
+}
+
+/* 포스트 제목 스타일 (사진 아래 깔끔하게) */
+.archive__item-title {
+  font-size: 0.9em !important;
+  margin-top: 10px !important;
+  text-align: center;
+}
+
+/* 모바일에서는 1~2열로 조절 */
+@media (max-width: 768px) {
+  .entries-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
