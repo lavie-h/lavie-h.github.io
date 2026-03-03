@@ -1,12 +1,20 @@
-# Theme Settings
-# 이 줄이 빠져서 에러가 났습니다. 다시 넣어주세요!
-remote_theme: "mmistakes/minimal-mistakes" 
+# 1. 테마 설정 (반드시 최상단에!)
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "air"
 
-# Site Settings
+# 2. 플러그인 설정 (remote_theme이 작동하려면 jekyll-remote-theme이 필요합니다)
+plugins:
+  - jekyll-remote-theme # 이 줄이 있는지 꼭 확인하세요!
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# 3. 사이트 설정
 locale: "ko-kr"
 title: "lavie-h"
-# ... 이하 생략 ...
+# ... 이후 코드는 동일 ...
 
 # Theme Settings
 minimal_mistakes_skin: "air"
