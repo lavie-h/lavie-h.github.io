@@ -1,4 +1,21 @@
 ---
-layout: archive  # home 대신 archive를 씁니다. (사이드바 통제가 훨씬 쉽습니다.)
-entries_layout: list # 글 목록을 리스트 형태로 보여줍니다.
+layout: archive
+title: "기록"
 ---
+
+{% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in postsByYear %}
+  <section id="{{ year.name }}" class="taxonomy__section">
+    <h2 class="archive__subtitle">{{ year.name }}</h2>
+    <div class="entries-list">
+      {% for post in year.items %}
+        <article class="archive__item" style="margin-bottom: 20px;">
+          <span class="page__meta" style="margin-right: 15px; color: #999;">{{ post.date | date: "%m.%d" }}</span>
+          <h3 class="archive__item-title" style="display: inline-block; margin: 0;">
+            <a href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
+          </h3>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
