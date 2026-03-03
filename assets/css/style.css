@@ -587,7 +587,7 @@ body {
 
 .top-header{
   position: relative;
-  padding: 28px 20px;
+  padding: 16px 20px;
 }
 
 /* 브랜드 중앙 정렬 */
@@ -667,7 +667,7 @@ body {
 
 .top-header{
   position: relative;
-  padding: 28px 20px;
+  padding: 16px 20px;
 }
 
 /* 브랜드 중앙 */
@@ -686,7 +686,7 @@ body {
 .brand-tagline{
   font-size: 12px;
   opacity: 0.7;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 /* 데스크탑 메뉴 (오른쪽) */
