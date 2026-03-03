@@ -1,54 +1,47 @@
-/* ===== Archive Grid Clean Reset ===== */
-
-/* 1. 기본 float 제거 */
-.archive__item,
-.list__item {
-  float: none !important;
+.year-title {
+  font-size: 0.8rem;
+  color: #bbb;
+  margin: 4rem 0 2rem 0;
+  font-weight: 400;
 }
 
-/* 2. 포스트 리스트를 Grid로 변환 */
-.entries-list {
-  display: grid !important;
+.year-grid {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 20px;
+  gap: 60px 30px;
 }
 
-/* 3. 각 포스트 카드 */
-.archive__item {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 4. 썸네일 이미지 */
-.archive__item-teaser img {
-  width: 100% !important;
+.grid-card img {
+  width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
 }
 
-/* 5. 제목 중앙정렬 */
-.archive__item-title {
-  text-align: center !important;
-  font-size: 0.9em;
+.grid-card h3 {
+  font-size: 0.95rem;
   margin-top: 10px;
 }
 
-/* 6. 날짜 숨기기 (선택) */
-.page__meta {
-  display: none !important;
+.grid-card a {
+  text-decoration: none;
+  color: #333;
 }
 
-/* ===== 반응형 ===== */
+.post-date {
+  font-size: 0.7rem;
+  color: #ccc;
+  display: block;
+  margin-top: 5px;
+}
 
 @media (max-width: 1024px) {
-  .entries-list {
+  .year-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .entries-list {
+  .year-grid {
     grid-template-columns: 1fr;
   }
 }
