@@ -2,10 +2,10 @@
 layout: archive
 ---
 
-<div class="main-featured-image" style="margin-top: 40px; margin-bottom: 60px; text-align: left;">
-  <img src="{{ '/assets/images/000058.JPG' | relative_url }}" 
-       style="width: 100%; max-width: 650px; height: auto; border-radius: 2px; filter: grayscale(10%);">
-</div>
+<div class="main-featured-image" style="width: 100%; margin: 0 auto 60px auto; padding: 0;">
+    <img src="{{ '/assets/images/000058.JPG' | relative_url }}" 
+         style="width: 100%; height: auto; display: block; border-radius: 0; filter: grayscale(5%);">
+  </div>
 
 {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 <div style="margin-top: 50px;">
