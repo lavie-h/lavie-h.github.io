@@ -1,116 +1,82 @@
 ---
 ---
 
-/* 1. 기본 테마 불러오기 */
+/* 1. 테마 및 스킨 불러오기 */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* 2. 폰트 설정 (나눔명조) */
+/* 2. 폰트 설정 */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
 
+/* 전체 배경 및 폰트 강제 적용 */
 body {
   background-color: #ffffff !important;
   font-family: "Nanum Myeongjo", serif !important;
-  color: #333;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  color: #333 !important;
 }
 
-/* 3. 헤더 및 상단 여백 제거 (a-round 미니멀 스타일) */
-.masthead {
-  border-bottom: none !important;
+/* 3. 하단 파란색 문제 해결 (링크 및 푸터 색상 초기화) */
+a { color: inherit; text-decoration: none; }
+.page__footer {
   background-color: #ffffff !important;
-  padding: 2em 0 0 0 !important; /* 상단 여백만 살짝 유지 */
+  color: #bbb !important;
+  border-top: none !important;
 }
 
-.masthead__inner-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.site-title {
-  text-align: center !important;
-  font-weight: 700;
-  margin-bottom: 0.5rem !important;
-}
-
-/* 4. 본문 레이아웃 확장 및 사이드바 제거 */
-.sidebar { display: none !important; }
-
-#main {
-  padding: 0 20px !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-}
-
-.archive, .page, .single {
+/* 4. 그리드 레이아웃 강제 적용 */
+/* 아카이브 목록을 감싸는 컨테이너 찾기 */
+.archive, .entries-layout, .list__wrapper {
+  display: block !important; /* 초기화 후 다시 설정 */
   width: 100% !important;
 }
 
-/* 5. 대망의 그리드 레이아웃 (포스트 목록 3열) */
-.entries-layout, .archive, .list__wrapper {
+/* 포스트 아이템들을 가로로 나열 */
+.entries-grid, .grid__wrapper, .archive {
   display: flex !important;
   flex-wrap: wrap !important;
+  flex-direction: row !important;
   justify-content: flex-start !important;
-  gap: 40px 2% !important;
-  margin-top: 30px !important;
-  padding: 0 !important;
+  gap: 30px 2% !important;
 }
 
+/* 개별 포스트 항목 */
 .list__item, .archive__item {
-  width: 32% !important; /* 데스크탑 3열 */
-  margin: 0 !important;
-  list-style: none !important;
+  display: block !important;
+  width: 32% !important; /* 3열 */
+  margin: 0 0 40px 0 !important;
+  float: none !important;
 }
 
-/* 6. 섬네일 이미지 비율 고정 (잡지 스타일) */
+/* 5. 썸네일 이미지 크기 및 비율 고정 */
 .archive__item-teaser, .list__item .teaser {
-  margin-bottom: 12px !important;
-  background-color: #f9f9f9;
-  overflow: hidden;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1.3 !important;
+  overflow: hidden !important;
+  margin-bottom: 10px !important;
 }
 
 .archive__item-teaser img, .list__item .teaser img {
   width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 1 / 1.3 !important; /* 세로로 긴 세련된 비율 */
+  height: 100% !important;
   object-fit: cover !important;
-  display: block;
 }
 
-/* 7. 포스트 제목 및 기타 요소 정리 */
+/* 6. 제목 중앙 정렬 */
 .archive__item-title {
-  font-size: 0.85rem !important;
   text-align: center !important;
-  line-height: 1.5;
+  font-size: 0.9em !important;
   margin: 0 !important;
-  word-break: keep-all;
 }
 
-.archive__item-title a {
-  color: #333 !important;
-  text-decoration: none !important;
-}
-
-/* 날짜 및 불필요한 메타 데이터 숨기기 */
-.archive__item-excerpt, .page__meta, .archive__subtitle {
-  display: none !important;
-}
-
-/* 8. 모바일 대응 (반응형) */
+/* 7. 모바일 대응 (반응형 2열) */
 @media (max-width: 768px) {
   .list__item, .archive__item {
-    width: 49% !important; /* 모바일 2열 */
+    width: 49% !important;
   }
 }
 
-/* 9. 푸터 스타일 */
-.page__footer {
-  border-top: none !important;
-  margin-top: 100px !important;
-  padding-bottom: 50px !important;
-  opacity: 0.3;
-  font-size: 0.7rem;
-  text-align: center;
+/* 불필요한 요소 숨기기 */
+.archive__subtitle, .page__meta, .archive__item-excerpt {
+  display: none !important;
 }
