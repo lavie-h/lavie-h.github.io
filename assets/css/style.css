@@ -463,3 +463,121 @@ body {
 .section--recent {
   margin-top: -10px;   /* 살짝 겹치게 */
 }
+/* ===== Hamburger (mobile drawer menu) ===== */
+
+/* 기본: 데스크톱에서는 햄버거 숨김 */
+.hamburger { display: none; }
+
+/* 오버레이 & 드로어 기본은 숨김 상태 */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 9998;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(320px, 86vw);
+  background: #f6f1e9; /* 사이트 톤에 맞춰 따뜻한 베이지 */
+  transform: translateX(100%);
+  transition: transform .25s ease;
+  z-index: 9999;
+  box-shadow: -16px 0 40px rgba(0,0,0,0.12);
+  padding: 18px 18px 28px;
+}
+
+.mobile-menu__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 14px;
+}
+
+.mobile-menu__title{
+  font-size: 14px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+
+.mobile-menu__close{
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mobile-menu__links a{
+  display: block;
+  padding: 12px 6px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.mobile-menu__links a:hover{
+  background: rgba(0,0,0,0.05);
+}
+
+/* 열렸을 때 상태 */
+.menu-open .mobile-menu-overlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+.menu-open .mobile-menu{
+  transform: translateX(0);
+}
+
+/* 메뉴 열리면 스크롤 잠금 */
+.no-scroll{
+  overflow: hidden;
+}
+
+/* ===== Mobile only ===== */
+@media (max-width: 768px){
+  /* 데스크톱 메뉴 숨기고 */
+  .top-nav--desktop{ display: none; }
+
+  /* 헤더 정렬 */
+  .top-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  /* 햄버거 보이기 */
+  .hamburger{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 12px;
+  }
+  .hamburger:hover{
+    background: rgba(0,0,0,0.05);
+  }
+  .hamburger__bar{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 999px;
+  }
+}

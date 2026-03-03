@@ -20,11 +20,39 @@
         <a href="/" class="brand-title">Lavie H</a>
         <p class="brand-tagline">a quiet archive</p>
       </div>
-      <nav class="top-nav">
+    
+      <!-- 데스크톱용 메뉴(그대로) -->
+      <nav class="top-nav top-nav--desktop">
         <a href="/">Home</a>
         <a href="/about">About</a>
       </nav>
+    
+      <!-- 모바일 햄버거 버튼 -->
+      <button class="hamburger"
+              type="button"
+              aria-label="Open menu"
+              aria-controls="mobileMenu"
+              aria-expanded="false">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
     </header>
+    
+    <!-- 모바일 드로어 메뉴 + 오버레이 -->
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    
+    <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__title">Menu</span>
+        <button class="mobile-menu__close" type="button" aria-label="Close menu" data-menu-close>✕</button>
+      </div>
+    
+      <div class="mobile-menu__links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+      </div>
+    </nav>
 
     <!-- 메인 히어로 배너 (페이지 폭에 맞춤) -->
     <section class="hero-banner">
@@ -125,6 +153,8 @@
     </footer>
 
   </div>
+
+  <script src="/assets/js/menu.js"></script>
 
 </body>
 </html>
