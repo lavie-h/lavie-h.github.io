@@ -208,3 +208,37 @@ body {
 .page__header, .page__title {
   display: none !important;
 }
+/* --- 그리드 레이아웃 시스템 --- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 기본 2열 배정 (3열은 3으로 수정) */
+  gap: 10px; /* 사진 사이 간격 */
+  width: 100vw; /* 화면 전체 너비 사용 */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.photo-grid img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 !important;
+  object-fit: cover;
+}
+
+/* 모바일에서는 1열로 변경 */
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
+.photo-grid img {
+  aspect-ratio: 1 / 1; /* 정사각형으로 강제 통일 */
+  object-fit: cover;   /* 이미지가 찌그러지지 않게 채움 */
+}
