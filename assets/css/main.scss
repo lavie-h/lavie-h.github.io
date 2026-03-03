@@ -58,25 +58,31 @@ html, body, #main, .archive__item-title {
 }
 
 // 3. 본문 중앙 정렬 및 폭 제한 (a-round 스타일 핵심)
-/* --- 본문 폭 수정 (세로 쓰기 방지) --- */
+/* --- 글자 세로 꺾임 방지 및 폭 최적화 --- */
+
 #main {
-  max-width: 800px !important; // 폭을 조금 더 넓게 조정 (기존 600px에서 변경)
+  display: block !important;
+  max-width: 900px !important; /* 폭을 넉넉하게 늘립니다 */
   margin: 0 auto !important;
-  padding: 40px 20px !important; // 좌우 여백을 최소화하여 글자 공간 확보
-  display: block !important;     // 레이아웃 흐름 강제
-  float: none !important;
-  clear: both !important;
+  padding: 40px 5% !important; /* 좌우 여백을 %로 주어 유연하게 대응 */
+  width: 90% !important;      /* 전체 너비 확보 */
 }
 
-// 글자들끼리 너무 붙어있지 않게 자간과 행간 조정
-body {
-  letter-spacing: -0.02em; // 자간을 살짝 조여서 세련되게
-  line-height: 1.8;        // 행간 확보
-  word-break: keep-all;    // 한글 단어가 중간에 끊기지 않게 설정
+/* 포스트 아이템들이 가로로 넓게 퍼지도록 설정 */
+.archive__item {
+  width: 100% !important;
+  margin-right: 0 !important;
 }
 
-// 제목 부분도 세로로 꺾이지 않게 설정
+/* 제목이 좁은 폭에 갇히지 않게 설정 */
 .archive__item-title {
-  word-break: keep-all;
-  overflow-wrap: break-word;
+  word-break: keep-all !important; /* 단어 단위로 줄바꿈 */
+  white-space: normal !important;
+  line-height: 1.4 !important;
+  margin-top: 0.5em !important;
+}
+
+/* 불필요한 레이아웃 초기화 */
+.sidebar {
+  display: none !important;
 }
