@@ -1,71 +1,39 @@
-# 1. 테마 설정 (반드시 최상단에!)
+# 1. 테마 및 플러그인 (가장 중요)
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "air"
 
-# 2. 플러그인 설정 (remote_theme이 작동하려면 jekyll-remote-theme이 필요합니다)
 plugins:
-  - jekyll-remote-theme # 이 줄이 있는지 꼭 확인하세요!
+  - jekyll-remote-theme
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
 
-# 3. 사이트 설정
+# 2. 사이트 설정
 locale: "ko-kr"
 title: "lavie-h"
-# ... 이후 코드는 동일 ...
-
-# Theme Settings
-minimal_mistakes_skin: "air"
-
-# Site Settings
-locale: "ko-kr"
-title: "lavie-h" # 소문자로 변경하여 감성 추가
-title_separator: "|"
 name: "기록하는 사람"
 description: "Make a note"
 url: "https://lavie-h.github.io"
 baseurl: ""
 
-# SEO & Analytics
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: "G-VJ8HMYCGYK"
-
-# Site Author (사이드바를 안 쓰므로 간소화)
-author:
-  name: "기록하는 사람"
-  location: "Seoul"
-
-# Reading Files
-include:
-  - .htaccess
-  - _pages
+# 3. 빌드 속도 향상을 위한 짐 덜어내기 (핵심!)
 exclude:
-  - vendor
-  - node_modules
+  - docs/          # 샘플 문서 폴더 전체 제외
+  - test/          # 테스트 폴더 제외
+  - vendor/
+  - node_modules/
   - Gemfile
   - Gemfile.lock
+  - .sass-cache/
+  - .jekyll-cache/
 
-# Conversion
+# 4. 기타 설정
+timezone: Asia/Seoul
 markdown: kramdown
 highlighter: rouge
-timezone: Asia/Seoul # 오타 수정
 
-# Pagination
-paginate: 10
-paginate_path: /page:num/
-
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-include-cache
-
-# Defaults (핵심 레이아웃 설정)
+# 5. 레이아웃 기본값
 defaults:
   - scope:
       path: ""
