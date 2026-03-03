@@ -138,3 +138,38 @@ body {
 .main-featured-image {
   margin-top: 0 !important;
 }
+/* 1. 헤더 영역 자체의 높이와 아래쪽 여백 최소화 */
+.masthead {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+/* 2. 네비게이션 메뉴 하단 여백 제거 */
+.masthead__inner-nav {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 3. 본문 컨테이너(#main) 상단 여백 강제 제거 */
+#main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* 4. 본문 내부의 첫 번째 요소(사진 등) 상단 여백 제거 */
+.page__content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 5. 만약 페이지 제목(h1)이 자동 생성되어 간격을 벌리고 있다면 제거 */
+.page__title {
+  display: none !important; /* 제목 텍스트를 아예 안 쓰실 경우 */
+}
+
+/* 6. 피처드 이미지(이미지 꽉 채우기용) 상단 마진 제거 */
+.main-featured-image {
+  margin-top: 0 !important;
+  top: 0 !important;
+}
