@@ -385,3 +385,17 @@ body {
   margin-top: 32px;
   font-size: 14px;
 }
+
+/* Recently grid fix */
+.recent-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px;
+}
+
+/* PC: 4 columns */
+@media (min-width: 1024px) {
+  .recent-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
