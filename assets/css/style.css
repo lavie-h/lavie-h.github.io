@@ -399,3 +399,71 @@ body {
     grid-template-columns: repeat(4, 1fr) !important;
   }
 }
+
+/* 어라운드 스타일 메인 배너 (full-bleed 느낌) */
+.hero-banner {
+  position: relative;
+
+  /* 화면 전체 폭으로 뺀 다음 가운데 정렬 */
+  margin-top: 28px;
+  margin-left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+
+  border-radius: 0; /* 어라운드는 모서리 거의 안 둥글어서 0 추천 */
+  overflow: hidden;
+  border: none;
+}
+.hero-banner-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-banner-inner {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  color: #ffffff;
+}
+
+.hero-category {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-category::before {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-caption {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+/* 가운데 정렬 이슈 타이틀 */
+.issue-header {
+  text-align: center;
+  padding: 60px 0 40px;  /* 위를 넉넉하게 */
+}
+
+.issue-title {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Recently 섹션을 약간 위로 끌어올리는 느낌 */
+.section--recent {
+  margin-top: -10px;   /* 살짝 겹치게 */
+}
