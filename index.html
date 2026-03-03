@@ -1,42 +1,15 @@
----
-layout: archive
-author_profile: false  # 사이드바 제거로 더 넓게 사용
-entries_layout: grid
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Lavie H</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
 
-<div class="main-featured-image">
-    <img src="{{ '/assets/images/00001.JPG' | relative_url }}" alt="main photo">
-  </div>
+  <h1>Lavie H</h1>
+  <p>a quiet archive</p>
 
-{% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-<div style="margin-top: 50px;">
-{% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-{% for year in postsByYear %}
-  <section id="{{ year.name }}">
-    <h2 class="archive__subtitle" style="border: none !important; font-size: 0.8rem !important; color: #bbb !important; margin-top: 4rem !important; font-weight: 400;">{{ year.name }}</h2>
-    <div class="entries-list">
-      {% for post in year.items %}
-      <article class="archive__item" style="margin-bottom: 5rem !important; text-align: left;">
-        
-        {% if post.header.teaser %}
-          <div class="archive__item-teaser" style="max-width: 100px; margin-bottom: 1rem;">
-            <a href="{{ post.url | relative_url }}">
-              <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: auto; object-fit: cover; border-radius: 2px;">
-            </a>
-          </div>
-        {% endif %}
-
-        <h3 class="archive__item-title" style="font-size: 1rem !important; font-weight: 400 !important; margin: 0; font-family: 'Nanum Myeongjo', serif !important;">
-          <a href="{{ post.url | relative_url }}" style="color: #333 !important; text-decoration: none !important;">{{ post.title }}</a>
-        </h3>
-
-        <span style="font-size: 0.7rem; color: #ccc; display: block; margin-top: 0.3rem; letter-spacing: 0.05em;">
-          {{ post.date | date: "%Y. %m. %d" }}
-        </span>
-
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-{% endfor %}
-</div>
+</body>
+</html>
