@@ -82,7 +82,45 @@
     margin-bottom: 80px;
   }
 
+<<<<<<< HEAD
   .year-title {
     margin: 80px 0 40px 0;
+=======
+/* 3. 썸네일(이미지) 박스 조절 */
+.archive__item-teaser,
+.list__item .teaser img {
+  width: 100% !important;      /* 가로 폭은 칸에 꽉 차게 */
+  
+  /* [중요] 비율 수정: 가로/세로 비율입니다 */
+  aspect-ratio: 1 / 1.2 !important; /* 1/1(정사각형), 3/4(세로형), 4/3(가로형) */
+  
+  /* 이미지가 비율에 맞춰 잘릴 때 중심을 맞춤 */
+  object-fit: cover !important; 
+  object-position: center !important; 
+
+  /* 테두리 둥글기 제거 (a-round 스타일) */
+  border-radius: 0 !important; 
+
+/* 4. 제목 스타일 (중앙 정렬) */
+.archive__item-title {
+  text-align: center !important;
+  font-size: 0.9em !important;
+  margin: 10px 0 0 0 !important;
+  width: 100% !important;
+}
+
+/* 5. 메인 본문의 첫 사진(큰 사진)은 그리드에서 제외 */
+/* 만약 메인 상단 큰 사진도 그리드에 들어간다면 이 코드가 필요합니다 */
+.page__content > img:first-child,
+.main-featured-image {
+  width: 100vw !important;
+  flex-basis: 100% !important; 
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .list__item, .archive__item {
+    width: calc(50% - 10px) !important; /* 2열 */
+>>>>>>> parent of acec2203 (123)
   }
 }
