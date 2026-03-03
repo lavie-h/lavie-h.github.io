@@ -1,0 +1,10 @@
+body {
+    background: #fafafa;
+    font-family: "Nanum Myeongjo", serif;
+    padding: 40px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
