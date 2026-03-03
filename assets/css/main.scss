@@ -258,68 +258,69 @@ body {
     margin-right: 0 !important;
   }
 }
-/* 1. 포스트를 감싸는 부모 컨테이너를 그리드로 전환 */
+/* 1. 아카이브 리스트 컨테이너를 그리드로 강제 전환 */
 .archive {
   display: block !important;
   width: 100% !important;
 }
 
-/* 포스트들이 담기는 리스트 영역 */
+/* 포스트들을 감싸는 실제 박스 찾기 */
 .entries-list, 
-section#main .page__content > div {
+.list__wrapper,
+#main .page__content {
   display: flex !important;
-  flex-wrap: wrap !important; /* 가로로 나열 후 자리가 부족하면 아래로 */
-  gap: 20px !important;      /* 포스트 간격 */
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
   justify-content: flex-start !important;
+  gap: 20px !important; /* 포스트 간 간격 */
   padding: 0 !important;
 }
 
-/* 2. 개별 포스트 아이템(하나의 카드) 설정 */
-.list__item {
-  width: calc(33.333% - 14px) !important; /* 3열 정렬 (여백 제외) */
-  margin: 0 !important;
+/* 2. 개별 포스트 항목 (세로로 나오던 것들) */
+.list__item, 
+.archive__item {
+  width: calc(33.333% - 14px) !important; /* 3열 강제 고정 */
+  margin: 0 0 40px 0 !important;
   padding: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
+  display: block !important;
+  float: none !important;
 }
 
-/* 3. 썸네일 이미지 크기 및 비율 고정 */
+/* 3. 썸네일(이미지) 박스 조절 */
+.archive__item-teaser,
 .list__item .teaser {
   width: 100% !important;
-  margin: 0 !important;
+  max-height: none !important;
+  margin: 0 0 10px 0 !important;
 }
 
+.archive__item-teaser img,
 .list__item .teaser img {
   width: 100% !important;
   height: auto !important;
-  aspect-ratio: 1 / 1.3; /* 세로가 긴 a-round 스타일 비율 */
+  aspect-ratio: 3 / 4 !important; /* a-round 느낌의 세로 비율 */
   object-fit: cover !important;
-  margin: 0 !important;
 }
 
-/* 4. 포스트 제목 및 기타 텍스트 스타일 */
-.list__item .archive__item-title {
-  font-size: 0.9em !important;
-  margin-top: 15px !important;
+/* 4. 제목 스타일 (중앙 정렬) */
+.archive__item-title {
   text-align: center !important;
+  font-size: 0.9em !important;
+  margin: 10px 0 0 0 !important;
   width: 100% !important;
 }
 
-.list__item .archive__item-excerpt, 
-.list__item .page__meta {
-  display: none !important; /* 날짜와 요약글 숨기기 (깔끔하게) */
+/* 5. 메인 본문의 첫 사진(큰 사진)은 그리드에서 제외 */
+/* 만약 메인 상단 큰 사진도 그리드에 들어간다면 이 코드가 필요합니다 */
+.page__content > img:first-child,
+.main-featured-image {
+  width: 100vw !important;
+  flex-basis: 100% !important; 
 }
 
-/* --- 모바일 대응 (화면이 작을 때) --- */
+/* 모바일 대응 */
 @media (max-width: 768px) {
-  .list__item {
-    width: calc(50% - 10px) !important; /* 모바일은 2열 */
-  }
-}
-
-@media (max-width: 480px) {
-  .list__item {
-    width: 100% !important; /* 아주 작은 화면은 1열 */
+  .list__item, .archive__item {
+    width: calc(50% - 10px) !important; /* 2열 */
   }
 }
