@@ -581,3 +581,82 @@ body {
     border-radius: 999px;
   }
 }
+/* =========================
+   HEADER
+========================= */
+
+.top-header{
+  position: relative;
+  padding: 28px 20px;
+}
+
+/* 브랜드 중앙 정렬 */
+.brand{
+  text-align: center;
+}
+
+.brand-title{
+  display: block;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-tagline{
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* 데스크탑 메뉴 */
+.top-nav{
+  position: absolute;
+  right: 20px;
+  top: 32px;
+}
+
+.top-nav a{
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+  color: inherit;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger{
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.hamburger__bar{
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #333;
+  margin: 5px 0;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+  .top-nav{
+    display: none;
+  }
+
+  .hamburger{
+    display: block;
+  }
+
+}
