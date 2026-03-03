@@ -5,7 +5,26 @@
 @import "minimal-mistakes";
 
 /* --- 좁은 화면 강제 해결 --- */
+/* 배경색 및 전체 톤 보정 */
+body {
+  background-color: #ffffff !important; // 완전 하얀색
+}
 
+.masthead, .page__footer, .page__inner-wrapper {
+  background-color: #ffffff !important; // 헤더와 푸터 배경도 통일
+}
+
+// 글 목록 사이의 선이나 배경색이 있다면 제거
+.archive__item {
+  background-color: #ffffff !important;
+}
+
+// 전체적인 배경 테두리나 그림자 제거
+#main {
+  background-color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
 // 1. 폰트 설정
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
 body {
@@ -33,4 +52,25 @@ body {
 #main {
   max-width: 800px !important;
   margin: 0 auto !important;
+}
+/* a-round 스타일로 더 비우기 */
+.masthead {
+  border-bottom: none !important; // 상단 구분선 제거
+}
+
+.masthead__menu-item {
+  font-weight: 400 !important;
+  text-transform: lowercase; // 영문은 소문자로 (감성 포인트)
+}
+
+.page__footer {
+  border-top: none !important; // 하단 구분선 제거
+  opacity: 0.4; // 푸터는 있는 듯 없는 듯 흐리게
+}
+
+.archive__subtitle {
+  border-bottom: none !important; // 연도 아래 선 제거
+  font-size: 0.9em !important;
+  color: #bbb !important;
+  margin-top: 3em !important;
 }
