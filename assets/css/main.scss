@@ -4,73 +4,71 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* --- 좁은 화면 강제 해결 --- */
-/* 배경색 및 전체 톤 보정 */
-body {
-  background-color: #ffffff !important; // 완전 하얀색
-}
-
-.masthead, .page__footer, .page__inner-wrapper {
-  background-color: #ffffff !important; // 헤더와 푸터 배경도 통일
-}
-
-// 글 목록 사이의 선이나 배경색이 있다면 제거
-.archive__item {
-  background-color: #ffffff !important;
-}
-
-// 전체적인 배경 테두리나 그림자 제거
-#main {
-  background-color: #ffffff !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-// 1. 폰트 설정
+/* --- 1. 기본 배경 및 폰트 설정 --- */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
 body {
+  background-color: #ffffff !important;
   font-family: "Nanum Myeongjo", serif !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #333;
+  letter-spacing: -0.01em; // 자간 조정
 }
 
-// 2. 사이드바가 차지하는 공간을 0으로 만들고 본문을 중앙으로!
-.sidebar {
-  display: none !important;
+/* --- 2. 레이아웃 최적화 (중앙 정렬) --- */
+.sidebar { display: none !important; }
+
+#main {
+  max-width: 700px !important; // a-round 느낌을 위해 조금 더 좁게 조정
+  margin: 0 auto !important;
+  padding: 60px 20px !important;
+  background-color: #ffffff !important;
 }
 
 .archive, .page, .single {
-  width: 100% !important;   // 폭을 100% 다 써라
-  max-width: 800px !important; // 하지만 너무 넓으면 읽기 힘드니 800px까지만
-  margin: 0 auto !important;   // 그리고 중앙에 와라
-  padding-right: 0 !important; // 오른쪽 여백 제거
-  float: none !important;      // 옆으로 비키지 마라
+  width: 100% !important;
+  float: none !important;
 }
 
-// 3. 내부 레이아웃 래퍼 초기화
-.layout__sidebar {
-  display: block !important; // 그리드 시스템 해제
-}
+.layout__sidebar { display: block !important; }
 
-#main {
-  max-width: 800px !important;
-  margin: 0 auto !important;
-}
-/* a-round 스타일로 더 비우기 */
+/* --- 3. 헤더 & 푸터 미니멀리즘 --- */
 .masthead {
-  border-bottom: none !important; // 상단 구분선 제거
+  border-bottom: none !important;
+  background-color: #ffffff !important;
+  padding: 2em 0 !important;
 }
 
 .masthead__menu-item {
   font-weight: 400 !important;
-  text-transform: lowercase; // 영문은 소문자로 (감성 포인트)
+  font-size: 0.9em !important;
+  text-transform: lowercase;
 }
 
 .page__footer {
-  border-top: none !important; // 하단 구분선 제거
-  opacity: 0.4; // 푸터는 있는 듯 없는 듯 흐리게
+  border-top: none !important;
+  background-color: #ffffff !important;
+  opacity: 0.3;
+  margin-top: 100px !important;
+  font-size: 0.8em;
 }
 
+/* --- 4. 글 목록 스타일 (a-round 스타일) --- */
 .archive__subtitle {
-  border-bottom: none !important; // 연도 아래 선 제거
-  font-size: 0.9em !important;
+  border: none !important;
+  font-size: 0.8em !important;
   color: #bbb !important;
-  margin-top: 3em !important;
+  margin-top: 4em !important;
+  font-weight: 400;
+}
+
+.archive__item-title {
+  font-family: "Nanum Myeongjo", serif !important;
+  transition: opacity 0.3s;
+  a {
+    color: #333 !important;
+    text-decoration: none !important;
+  }
+  &:hover { opacity: 0.6; } // 마우스 올렸을 때 은은하게
 }

@@ -1,21 +1,24 @@
 ---
 layout: archive
-title: "기록"
 ---
 
+<div style="margin-top: 50px;">
 {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 {% for year in postsByYear %}
-  <section id="{{ year.name }}" class="taxonomy__section">
+  <section id="{{ year.name }}">
     <h2 class="archive__subtitle">{{ year.name }}</h2>
     <div class="entries-list">
       {% for post in year.items %}
-      <article class="archive__item" style="margin-bottom: 30px;">
-        <span style="font-size: 0.8em; color: #ccc; display: block; margin-bottom: 5px;">{{ post.date | date: "%Y. %m. %d" }}</span>
-        <h3 class="archive__item-title" style="font-size: 1.1em; font-weight: 400;">
-          <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #333;">{{ post.title }}</a>
+      <article class="archive__item" style="margin-bottom: 35px;">
+        <span style="font-size: 0.75em; color: #bbb; display: block; margin-bottom: 8px; letter-spacing: 0.05em;">
+          {{ post.date | date: "%Y. %m. %d" }}
+        </span>
+        <h3 class="archive__item-title" style="font-size: 1.05em; font-weight: 400; margin: 0;">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </h3>
       </article>
       {% endfor %}
     </div>
   </section>
 {% endfor %}
+</div>
