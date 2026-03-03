@@ -404,20 +404,15 @@ body {
 /* 어라운드 스타일 메인 배너 (full-bleed 느낌) */
 .hero-banner {
   position: relative;
-
-  /* 화면 전체 폭으로 뺀 다음 가운데 정렬 */
-  margin-top: 28px;
-  margin-left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
-
-  border-radius: 0; /* 어라운드는 모서리 거의 안 둥글어서 0 추천 */
+  width: 100%;
+  border-radius: 18px;
   overflow: hidden;
-  border: none;
+  border: 1px solid var(--border-subtle);
 }
+
 .hero-banner-img {
   width: 100%;
-  height: 380px;
+  height: 360px;
   object-fit: cover;
   display: block;
 }
