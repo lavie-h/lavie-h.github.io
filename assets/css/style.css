@@ -259,3 +259,12 @@ body {
     font-size: 24px;
   }
 }
+/* All stories에서 링크 항목 스타일 */
+.archive-item-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.archive-item-link:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
