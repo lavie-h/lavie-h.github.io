@@ -129,6 +129,16 @@ body {
   border: 1px solid var(--border-subtle);
   object-fit: cover;
 }
+/* PC 화면에서만 이미지 크기 고정 */
+@media (min-width: 1024px) {
+  .hero-image-img {
+    max-height: 380px;  /* PC에서 적당한 사이즈 */
+  }
+
+  .hero-image {
+    overflow: hidden;   /* 큰 사진을 자연스럽게 crop */
+  }
+}
 
 /* 섹션 공통 */
 
