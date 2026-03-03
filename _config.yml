@@ -229,7 +229,7 @@ kramdown:
 
 # Outputting
 permalink: /:categories/:title/
-timezone: # Aisa/seoul
+timezone: Asia/Seoul
 
 
 # Pagination with jekyll-paginate
