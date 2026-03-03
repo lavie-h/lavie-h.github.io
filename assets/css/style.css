@@ -167,12 +167,19 @@ body {
   gap: 18px;
 }
 
-/* Recently 썸네일 그리드 기본값 */
+/* Recently 썸네일 그리드 기본값: 모바일/태블릿 2열 */
 .recent-grid {
   margin-top: 22px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));  /* PC/태블릿용 */
+  grid-template-columns: repeat(2, 1fr);  /* 기본 2열 */
   gap: 18px;
+}
+
+/* PC(데스크탑)에서 4열 유지 */
+@media (min-width: 1024px) {
+  .recent-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .card {
@@ -279,13 +286,8 @@ body {
 /* Recently 썸네일 그리드 */
 
 @media (max-width: 480px) {
-  .recent-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px; /* 모바일용 여백 조금 줄이기 추천 */
-  }
-
   .recent-thumb img {
-    height: 140px; /* 모바일에서 썸네일 비율 예쁘게 */
+    height: 140px;
   }
 }
 
