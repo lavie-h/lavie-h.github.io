@@ -660,3 +660,101 @@ body {
   }
 
 }
+/* =========================
+   HEADER (override, clean)
+   ========================= */
+
+/* 헤더 전체 높이/간격 */
+.top-header{
+  position: relative;
+  width: 100%;
+  background: #f2efe9;
+  border-bottom: 1px solid #e5e0d8;
+
+  /* 🔥 여기 숫자로 헤더 높이 조절 */
+  padding: 16px 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* 브랜드(왼쪽) */
+.top-header .brand{
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* 🔥 타이틀/태그라인 간격 */
+  line-height: 1.1;
+}
+
+.top-header .brand-title{
+  text-decoration: none;
+  color: #222;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.top-header .brand-tagline{
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+/* 메뉴(오른쪽) - 데스크탑 */
+.top-header .top-nav{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.top-header .top-nav a{
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+}
+
+.top-header .top-nav a:hover{
+  opacity: 0.65;
+}
+
+/* 햄버거 버튼(기본: 데스크탑에선 숨김, 모바일에서만 보이게) */
+.top-header .hamburger{
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-header .hamburger__bar{
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #222;
+  margin: 5px 0;
+}
+
+/* 모바일: nav 숨기고 햄버거 노출 */
+@media (max-width: 768px){
+  .top-header{
+    padding: 12px 16px !important; /* 🔥 모바일 헤더 더 얇게 */
+  }
+
+  .top-header .top-nav{
+    display: none;
+  }
+
+  .top-header .hamburger{
+    display: inline-flex;
+  }
+
+  .top-header .brand-title{
+    font-size: 20px;
+    letter-spacing: 1.5px;
+  }
+}
