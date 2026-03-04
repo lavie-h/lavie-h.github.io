@@ -997,3 +997,36 @@ header.top-header button.hamburger .hamburger__bar{
     display: block !important;
   }
 }
+/* ===== HAMBURGER HARD FORCE (no media) ===== */
+header.top-header{ position: relative !important; }
+
+header.top-header button.hamburger{
+  display: inline-flex !important;     /* <- 무조건 보이게 */
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
+  width: 44px !important;
+  height: 44px !important;
+  border: 0 !important;
+  background: rgba(255,0,0,0.08) !important; /* ✅ 변화 확인용(연한 빨강) */
+  padding: 0 !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  flex-direction: column !important;
+
+  color: #222 !important;
+  z-index: 9999 !important;
+}
+
+header.top-header button.hamburger .hamburger__bar{
+  display: block !important;
+  width: 24px !important;
+  height: 3px !important;             /* ✅ 확 티나게 */
+  margin: 0 !important;
+  background: currentColor !important;
+  border-radius: 2px !important;
+}
