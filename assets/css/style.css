@@ -1030,3 +1030,99 @@ header.top-header button.hamburger .hamburger__bar{
   background: currentColor !important;
   border-radius: 2px !important;
 }
+/* ===== HEADER FINAL CLEAN ===== */
+
+.top-header{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+
+/* 브랜드 */
+.top-header .brand{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.top-header .brand-title{
+  text-decoration: none;
+  color: #222;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.top-header .brand-tagline{
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+}
+
+/* PC 메뉴 */
+.top-header .top-nav{
+  display: flex;
+  gap: 28px;
+}
+
+.top-header .top-nav a{
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+}
+
+/* 햄버거 기본 숨김 (PC) */
+.top-header .hamburger{
+  display: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+  .top-header{
+    justify-content: center;
+    padding: 10px 16px;
+  }
+
+  /* 브랜드 중앙 */
+  .top-header .brand{
+    align-items: center;
+    text-align: center;
+  }
+
+  /* PC 메뉴 숨김 */
+  .top-header .top-nav{
+    display: none;
+  }
+
+  /* 햄버거 표시 */
+  .top-header .hamburger{
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .top-header .hamburger__bar{
+    width: 22px;
+    height: 2px;
+    background: #222;
+    border-radius: 2px;
+  }
+
+}
