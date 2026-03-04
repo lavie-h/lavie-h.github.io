@@ -958,3 +958,117 @@ body {
   }
 
 }
+/* =========================
+   HEADER + HAMBURGER (FINAL FIX)
+   ========================= */
+
+/* 공통 헤더 */
+header.top-header{
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 14px 20px !important;
+  background: transparent !important;
+  border-bottom: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* 브랜드 */
+header.top-header .brand{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  line-height: 1.1 !important;
+}
+
+header.top-header .brand-title{
+  text-decoration: none !important;
+  color: #222 !important;
+  font-size: 22px !important;
+  letter-spacing: 2px !important;
+}
+
+header.top-header .brand-tagline{
+  margin: 0 !important;
+  font-size: 12px !important;
+  color: #777 !important;
+}
+
+/* PC 메뉴 */
+header.top-header nav.top-nav{
+  display: flex !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+
+header.top-header nav.top-nav a{
+  text-decoration: none !important;
+  color: #222 !important;
+  font-size: 14px !important;
+}
+
+/* ✅ PC에서 햄버거 완전 제거 */
+@media (min-width: 769px){
+  header.top-header button.hamburger{
+    display: none !important;
+    pointer-events: none !important;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px){
+
+  /* 브랜드 중앙 고정 */
+  header.top-header{
+    justify-content: center !important;
+    padding: 10px 16px !important;
+  }
+
+  header.top-header .brand{
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* PC 메뉴 숨김 */
+  header.top-header nav.top-nav{
+    display: none !important;
+  }
+
+  /* ✅ 햄버거 오른쪽 고정 + 클릭 영역 확실 */
+  header.top-header button.hamburger{
+    display: inline-flex !important;
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important;
+    z-index: 2000 !important;
+  }
+
+  /* ✅ 줄 3개 모양 안정 */
+  header.top-header button.hamburger .hamburger__bar{
+    display: block !important;
+    width: 22px !important;
+    height: 2px !important;
+    margin: 0 !important;
+    background: #222 !important;
+    border-radius: 2px !important;
+  }
+}
