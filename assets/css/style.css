@@ -946,3 +946,54 @@ header.top-header button.hamburger .hamburger__bar{
     justify-content: center !important;
   }
 }
+/* ===== Mobile header: center brand + clean hamburger ===== */
+@media (max-width: 768px){
+  .top-header{
+    position: relative !important;
+    padding: 10px 16px !important;
+    justify-content: center !important;   /* 브랜드 중앙 */
+  }
+
+  /* nav 숨김 유지 */
+  .top-header .top-nav{ display: none !important; }
+
+  /* 브랜드를 정확히 중앙에 */
+  .top-header .brand{
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* 햄버거를 오른쪽에 고정 */
+  .top-header .hamburger{
+    display: inline-flex !important;
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;      /* ✅ bar 간격은 gap으로 */
+    flex-direction: column !important;
+
+    color: #222 !important;
+    z-index: 9999 !important;
+  }
+
+  /* ✅ bar 모양을 “아이콘”처럼 깔끔하게 */
+  .top-header .hamburger__bar{
+    margin: 0 !important;                 /* ✅ 기존 margin 제거 */
+    width: 22px !important;
+    height: 2px !important;
+    border-radius: 2px !important;
+    background: currentColor !important;
+    display: block !important;
+  }
+}
