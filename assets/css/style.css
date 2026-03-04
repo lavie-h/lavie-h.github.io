@@ -875,3 +875,13 @@ header.top-header nav.top-nav a{
 .running{
   margin-top: 70px;
 }
+.section-title{
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.section-subtitle{
+  margin: 0 0 22px;
+  color: #777;
+  font-size: 14px;
+}
