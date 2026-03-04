@@ -758,3 +758,104 @@ body {
     letter-spacing: 1.5px;
   }
 }
+/* =========================
+   HEADER FINAL OVERRIDE
+   - 배경 띠 제거
+   - 모바일 햄버거 아이콘 강제 표시
+   ========================= */
+
+   .top-header{
+    position: relative;
+    width: 100%;
+    padding: 14px 20px !important;   /* PC 헤더 높이 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  
+    /* ✅ 배경 띠 없애기 */
+    background: transparent !important;
+    border-bottom: 0 !important;
+  
+    z-index: 50;
+  }
+  
+  /* 브랜드 */
+  .top-header .brand{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    line-height: 1.1;
+  }
+  
+  .top-header .brand-title{
+    text-decoration: none;
+    color: #222;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+  
+  .top-header .brand-tagline{
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+  }
+  
+  /* 데스크탑 메뉴 */
+  .top-header .top-nav{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  
+  .top-header .top-nav a{
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+  }
+  
+  .top-header .top-nav a:hover{ opacity: 0.65; }
+  
+  /* ✅ 햄버거: 기본은 숨김(PC) */
+  .top-header .hamburger{
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+  
+    /* 아이콘 색을 여기서 통일 */
+    color: #222;
+  
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ✅ 햄버거 bar가 안 보이는 문제를 막기 위해 강제 스타일 */
+  .top-header .hamburger__bar{
+    display: block !important;
+    width: 22px;
+    height: 2px;
+    margin: 5px 0;
+    background: currentColor !important; /* <- color 따라감 */
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* 모바일: nav 숨기고 햄버거 보이기 */
+  @media (max-width: 768px){
+    .top-header{
+      padding: 10px 16px !important;  /* 모바일 헤더 높이 */
+    }
+  
+    .top-header .top-nav{
+      display: none !important;
+    }
+  
+    .top-header .hamburger{
+      display: inline-flex !important; /* ✅ 무조건 보이게 */
+    }
+  }
