@@ -885,3 +885,99 @@ header.top-header nav.top-nav a{
   color: #777;
   font-size: 14px;
 }
+.lh-archive-intro {
+  margin-bottom: 28px;
+  color: #666;
+}
+
+.lh-archive-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 24px;
+}
+
+.lh-archive-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.lh-archive-card-thumb {
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.lh-archive-card-thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.lh-archive-card-body h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.lh-archive-card-body p {
+  margin: 0;
+  color: #666;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+.lh-archive-writing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #ececec;
+}
+
+.lh-archive-writing-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.lh-archive-writing-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lh-archive-writing-list span {
+  color: #888;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.lh-archive-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.lh-archive-gallery-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .lh-archive-card-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .lh-archive-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lh-archive-writing-list li {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,21 @@
+---
+layout: archive
+title: "Gallery"
+permalink: /gallery/
+author_profile: false
+---
+
+<div class="lh-archive-intro">
+  <p>frames from film, light, and small moments</p>
+</div>
+
+<div class="lh-archive-gallery-grid">
+  {% assign posts = site.categories.gallery %}
+  {% for post in posts %}
+    <a class="lh-archive-gallery-item" href="{{ post.url | relative_url }}">
+      {% if post.thumbnail %}
+        <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+      {% endif %}
+    </a>
+  {% endfor %}
+</div>
