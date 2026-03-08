@@ -4,7 +4,197 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>창푸악 게이트 | Lavie H</title>
-  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    html, body{
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      background:#f7f4ef;
+      color:#1f1f1b;
+      font-family: "Georgia", "Times New Roman", serif;
+      line-height:1.75;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+      height:auto;
+    }
+
+    .top-header{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      padding:28px 36px;
+    }
+
+    .brand-title{
+      display:block;
+      font-size:22px;
+      letter-spacing:0.08em;
+      margin-bottom:4px;
+    }
+
+    .brand-tagline{
+      margin:0;
+      font-size:12px;
+      color:#8b847c;
+    }
+
+    .top-nav{
+      display:flex;
+      gap:36px;
+      padding-top:8px;
+      font-size:15px;
+    }
+
+    .detail-page{
+      max-width:980px;
+      margin:0 auto;
+      padding:32px 24px 100px;
+    }
+
+    .detail-head{
+      max-width:720px;
+      margin:0 auto 40px;
+    }
+
+    .detail-category{
+      margin:0 0 14px;
+      font-size:12px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:#7f786f;
+    }
+
+    .detail-title{
+      margin:0;
+      font-size:54px;
+      line-height:1.15;
+      font-weight:500;
+      letter-spacing:-0.03em;
+    }
+
+    .detail-date{
+      margin:18px 0 0;
+      font-size:14px;
+      color:#8a847c;
+    }
+
+    .detail-photo{
+      max-width:980px;
+      margin:0 auto 44px;
+    }
+
+    .detail-photo img{
+      width:100%;
+      max-height:680px;
+      object-fit:cover;
+    }
+
+    .detail-body{
+      max-width:720px;
+      margin:0 auto;
+    }
+
+    .detail-body p{
+      margin:0 0 24px;
+      font-size:18px;
+      color:#2b2a26;
+    }
+
+    .detail-body p.lead{
+      font-size:21px;
+      line-height:1.9;
+      color:#1f1f1b;
+    }
+
+    .detail-footer{
+      max-width:720px;
+      margin:56px auto 0;
+      padding-top:24px;
+      border-top:1px solid #ddd5cb;
+    }
+
+    .detail-back{
+      font-size:15px;
+      color:#5f574f;
+    }
+
+    .detail-back:hover{
+      opacity:0.65;
+    }
+
+    @media (max-width: 768px){
+      .top-header{
+        padding:22px 20px;
+        align-items:flex-start;
+      }
+
+      .brand-title{
+        font-size:18px;
+      }
+
+      .top-nav{
+        gap:18px;
+        padding-top:4px;
+        font-size:14px;
+      }
+
+      .detail-page{
+        padding:20px 16px 72px;
+      }
+
+      .detail-head{
+        margin-bottom:24px;
+      }
+
+      .detail-title{
+        font-size:34px;
+        line-height:1.22;
+      }
+
+      .detail-date{
+        margin-top:12px;
+        font-size:13px;
+      }
+
+      .detail-photo{
+        margin-bottom:28px;
+      }
+
+      .detail-photo img{
+        max-height:none;
+      }
+
+      .detail-body p{
+        font-size:16px;
+        line-height:1.9;
+        margin-bottom:18px;
+      }
+
+      .detail-body p.lead{
+        font-size:18px;
+      }
+
+      .detail-footer{
+        margin-top:36px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -20,46 +210,44 @@
     </nav>
   </header>
 
-  <main class="detail-wrap">
-    <article class="detail-post">
-
-      <p class="detail-category">TRAVEL · Chiang Mai</p>
+  <main class="detail-page">
+    <section class="detail-head">
+      <p class="detail-category">Travel · Chiang Mai</p>
       <h1 class="detail-title">창푸악 게이트</h1>
       <p class="detail-date">2026. 1</p>
+    </section>
 
-      <figure class="detail-hero">
-        <img src="/assets/images/recent-2.jpg" alt="창푸악 게이트" />
-      </figure>
+    <figure class="detail-photo">
+      <img src="/assets/images/recent-2.jpg" alt="창푸악 게이트">
+    </figure>
 
-      <div class="detail-content">
-        <p>
-          치앙마이 북문 근처를 천천히 걷다가 창푸악 게이트 앞에 잠시 멈췄다.
-          화려하게 꾸며진 장소는 아니었지만, 오히려 그래서 더 오래 눈에 남았다.
-        </p>
+    <article class="detail-body">
+      <p class="lead">
+        치앙마이 북문 근처를 천천히 걷다가 창푸악 게이트 앞에 잠시 멈췄다.
+        화려하게 꾸며진 장소는 아니었지만, 오히려 그래서 더 오래 눈에 남았다.
+      </p>
 
-        <p>
-          낮의 공기는 느긋했고, 성벽 주변은 생각보다 조용했다.
-          사람들은 각자의 속도로 지나가고 있었고,
-          여행지에서만 느껴지는 묘한 여유가 이곳에 머물러 있었다.
-        </p>
+      <p>
+        낮의 공기는 느긋했고, 성벽 주변은 생각보다 조용했다.
+        사람들은 각자의 속도로 지나가고 있었고,
+        여행지에서만 느껴지는 묘한 여유가 이곳에 머물러 있었다.
+      </p>
 
-        <p>
-          밤이 되면 분위기는 조금 달라진다.
-          주변 노점에 불이 켜지고, 가볍게 저녁을 해결하려는 사람들로 조금씩 채워진다.
-          여행의 기억은 거대한 장면보다 이렇게 소소한 풍경 속에 남는 것 같았다.
-        </p>
+      <p>
+        밤이 되면 분위기는 조금 달라진다.
+        주변 노점에 불이 켜지고, 가볍게 저녁을 해결하려는 사람들로 조금씩 채워진다.
+        여행의 기억은 거대한 장면보다 이렇게 소소한 풍경 속에 남는 것 같았다.
+      </p>
 
-        <p>
-          특별한 목적 없이 걷다가 만난 장소.
-          그래서 더 좋았던 곳.
-        </p>
-      </div>
-
-      <div class="detail-bottom">
-        <a href="/" class="detail-back">← Home으로 돌아가기</a>
-      </div>
-
+      <p>
+        특별한 목적 없이 걷다가 만난 장소.
+        그래서 더 좋았던 곳.
+      </p>
     </article>
+
+    <div class="detail-footer">
+      <a href="/" class="detail-back">← Home으로 돌아가기</a>
+    </div>
   </main>
 
 </body>
