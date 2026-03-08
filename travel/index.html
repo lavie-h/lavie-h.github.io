@@ -1,207 +1,298 @@
----
----
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Lavie H · a quiet archive</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 메인 스타일 -->
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel | Lavie H</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    html, body{
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      background:#f7f4ef;
+      color:#1f1f1b;
+      font-family:"Georgia","Times New Roman",serif;
+      line-height:1.6;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .top-header{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      padding:28px 36px;
+    }
+
+    .brand-title{
+      display:block;
+      font-size:22px;
+      letter-spacing:0.08em;
+      margin-bottom:4px;
+    }
+
+    .brand-tagline{
+      margin:0;
+      font-size:12px;
+      color:#8b847c;
+    }
+
+    .top-nav{
+      display:flex;
+      gap:36px;
+      padding-top:8px;
+      font-size:15px;
+    }
+
+    .travel-page{
+      max-width:980px;
+      margin:0 auto;
+      padding:40px 24px 100px;
+    }
+
+    .travel-intro{
+      text-align:center;
+      margin:20px 0 80px;
+    }
+
+    .travel-intro h1{
+      margin:0;
+      font-size:54px;
+      font-weight:500;
+      letter-spacing:0.08em;
+      color:#9d8065;
+    }
+
+    .travel-intro p{
+      margin:12px 0 0;
+      font-size:22px;
+      font-style:italic;
+      color:#4a4038;
+    }
+
+    .travel-list{
+      border-top:1px solid #ddd5cb;
+    }
+
+    .travel-item{
+      display:grid;
+      grid-template-columns:1.4fr 0.8fr;
+      gap:36px;
+      align-items:center;
+      padding:52px 0;
+      border-bottom:1px solid #ddd5cb;
+      transition:opacity 0.25s ease;
+    }
+
+    .travel-item:hover{
+      opacity:0.86;
+    }
+
+    .travel-text{
+      min-width:0;
+    }
+
+    .travel-city{
+      margin:0 0 14px;
+      font-size:68px;
+      line-height:1.04;
+      font-weight:500;
+      letter-spacing:-0.04em;
+      color:#2f2722;
+    }
+
+    .travel-note{
+      margin:0;
+      font-size:24px;
+      line-height:1.5;
+      font-style:italic;
+      color:#8b7663;
+    }
+
+    .travel-thumb{
+      width:100%;
+      aspect-ratio:16 / 10;
+      border-radius:16px;
+      overflow:hidden;
+      background:#ddd5cb;
+    }
+
+    .travel-thumb img{
+      transition:transform 0.45s ease;
+    }
+
+    .travel-item:hover .travel-thumb img{
+      transform:scale(1.03);
+    }
+
+    .travel-footer{
+      margin-top:48px;
+      font-size:15px;
+      color:#5f574f;
+    }
+
+    .travel-footer a:hover{
+      opacity:0.65;
+    }
+
+    @media (max-width: 900px){
+      .travel-city{
+        font-size:56px;
+      }
+
+      .travel-note{
+        font-size:21px;
+      }
+    }
+
+    @media (max-width: 768px){
+      .top-header{
+        padding:22px 20px;
+        align-items:flex-start;
+      }
+
+      .brand-title{
+        font-size:18px;
+      }
+
+      .top-nav{
+        gap:18px;
+        padding-top:4px;
+        font-size:14px;
+      }
+
+      .travel-page{
+        padding:24px 16px 72px;
+      }
+
+      .travel-intro{
+        margin:10px 0 44px;
+      }
+
+      .travel-intro h1{
+        font-size:34px;
+      }
+
+      .travel-intro p{
+        font-size:18px;
+      }
+
+      .travel-item{
+        grid-template-columns:1fr;
+        gap:18px;
+        padding:28px 0;
+      }
+
+      .travel-city{
+        margin-bottom:8px;
+        font-size:40px;
+        line-height:1.08;
+      }
+
+      .travel-note{
+        font-size:18px;
+        line-height:1.55;
+      }
+
+      .travel-thumb{
+        aspect-ratio:16 / 10;
+        border-radius:12px;
+      }
+
+      .travel-footer{
+        margin-top:32px;
+        font-size:14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="page">
+  <header class="top-header">
+    <div class="brand">
+      <a href="/" class="brand-title">LAVIE H</a>
+      <p class="brand-tagline">a quiet archive</p>
+    </div>
 
-    <!-- 상단 헤더 -->
-    <header class="top-header">
-
-      <div class="brand">
-        <a href="/" class="brand-title">Lavie H</a>
-        <p class="brand-tagline">a quiet archive</p>
-      </div>
-    
-      <nav class="top-nav">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/travel/">Travel</a>
-      </nav>
-    
-      <button class="hamburger" aria-label="Menu">
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
-      </button>
-    
-    </header>
-    
-    <!-- 모바일 드로어 메뉴 + 오버레이 -->
-    <div class="mobile-menu-overlay" data-menu-close></div>
-    
-    <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
-      <div class="mobile-menu__header">
-        <span class="mobile-menu__title">Menu</span>
-        <button class="mobile-menu__close" type="button" aria-label="Close menu" data-menu-close>✕</button>
-      </div>
-    
-      <div class="mobile-menu__links">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/travel/">Travel</a>
-      </div>
+    <nav class="top-nav">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/travel/">Travel</a>
     </nav>
+  </header>
 
-    <!-- 메인 히어로 배너 (페이지 폭에 맞춤) -->
-    <section class="hero-banner">
-      <img src="/assets/images/main.jpg" alt="main image" class="hero-banner-img">
-
-      <div class="hero-banner-inner">
-        <p class="hero-category">Chang Mai</p>
-        <p class="hero-caption">
-          보고 듣고 느낀, 일상의 조각들을<br>
-          조용히 모아두는 기록입니다.
-        </p>
-      </div>
+  <main class="travel-page">
+    <section class="travel-intro">
+      <h1>TRAVEL</h1>
+      <p>cities I remember</p>
     </section>
 
-    <!-- 가운데 정렬 타이틀 -->
-    <section class="issue-header">
-      <h1 class="issue-title">LAVIE-H 2026.YEAR</h1>
-    </section>
+    <section class="travel-list">
 
-    <!-- 섹션 1: Travel -->
-    <section class="section section--recent">
-      <div class="section-header">
-        <h2>Travel</h2>
-        <p class="section-subtitle">최근에 마음에 남았던 기록들</p>
-      </div>
-
-      <div class="recent-grid">
-        <!-- 카드 1 -->
-        <a href="/first-note.html" class="recent-card">
-          <div class="recent-thumb">
-            <img src="/assets/images/recent-1.jpg" alt="recent 1">
-          </div>
-          <p class="recent-meta">LAVIE H, CHANGMAI, 2026.1</p>
-          <h3 class="recent-title">Wat Chiang Man</h3>
-          <p class="recent-subtitle">조용하게 사색을 즐긴 공간</p>
-        </a>
-
-        <!-- 카드 2 -->
-        <a href="/travel/chuang-phuak-gate.html" class="recent-card">
-          <div class="recent-thumb">
-            <img src="/assets/images/recent-2.jpg" alt="recent 2">
-          </div>
-          <p class="recent-meta">LAVIE H, CHANGMAI, 2026.1</p>
-          <h3 class="recent-title">창푸악게이트</h3>
-          <p class="recent-subtitle">꽃과 나무가 가득한 GATE</p>
-        </a>
-
-        <!-- 카드 3 -->
-        <a href="#" class="recent-card">
-          <div class="recent-thumb">
-            <img src="/assets/images/recent-3.jpg" alt="recent 3">
-          </div>
-          <p class="recent-meta">LAVIE H, CHANGMAI, 2026.1</p>
-          <h3 class="recent-title">FOOD</h3>
-          <p class="recent-subtitle">여유로운 아침식사</p>
-        </a>
-
-        <!-- 카드 4 -->
-        <a href="#" class="recent-card">
-          <div class="recent-thumb">
-            <img src="/assets/images/recent-4.jpg" alt="recent 4">
-          </div>
-          <p class="recent-meta">LAVIE H, CHANGMAI, 2026.1</p>
-          <h3 class="recent-title">창푸악호텔</h3>
-          <p class="recent-subtitle">다시 가고 싶은 공간</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="running">
-      <h2 class="section-title">RUNNING</h2>
-      <p class="section-subtitle">달리며 기록한 순간들</p>
-    
-      <div class="recent-grid">
-    
-        <!-- 카드 1 -->
-        <a class="recent-card" href="/running/run01.html">
-          <div class="recent-thumb">
-            <img src="/assets/images/run-01.jpg" alt="running 01">
-          </div>
-          <div class="recent-meta">RUNNING, 2026</div>
-          <div class="recent-title">Morning Run</div>
-          <div class="recent-desc">아침 공기를 가르며 달리다</div>
-        </a>
-    
-        <!-- 카드 2 -->
-        <a class="recent-card" href="/running/run02.html">
-          <div class="recent-thumb">
-            <img src="/assets/images/run-02.jpg" alt="running 02">
-          </div>
-          <div class="recent-meta">RUNNING, 2026</div>
-          <div class="recent-title">City Run</div>
-          <div class="recent-desc">도시의 리듬 속에서</div>
-        </a>
-    
-        <!-- 카드 3 -->
-        <a class="recent-card" href="/running/run03.html">
-          <div class="recent-thumb">
-            <img src="/assets/images/run-03.jpg" alt="running 03">
-          </div>
-          <div class="recent-meta">RUNNING, 2026</div>
-          <div class="recent-title">Evening Jog</div>
-          <div class="recent-desc">저녁 노을과 함께</div>
-        </a>
-    
-        <!-- 카드 4 -->
-        <a class="recent-card" href="/running/run04.html">
-          <div class="recent-thumb">
-            <img src="/assets/images/run-04.jpg" alt="running 04">
-          </div>
-          <div class="recent-meta">RUNNING, 2026</div>
-          <div class="recent-title">Forest Run</div>
-          <div class="recent-desc">숲길을 따라 달리다</div>
-        </a>
-    
-      </div>
-    </section>
-
-    <!-- 섹션 2: All stories -->
-    <section class="section section--archive">
-      <div class="section-header">
-        <h2>All stories</h2>
-        <p class="section-subtitle">
-          언젠가 천천히 채워질, 조용한 기록들.
-        </p>
-      </div>
-
-      <div class="archive-list">
-        <a href="/first-note.html" class="archive-item archive-item-link">
-          <span class="archive-date">2026.03.03</span>
-          <span class="archive-title">처음 적어두는 인사</span>
-        </a>
-        <div class="archive-item">
-          <span class="archive-date">2026.03.02</span>
-          <span class="archive-title">조용한 밤의 메모</span>
+      <a href="/travel/chiang-mai-1.html" class="travel-item">
+        <div class="travel-text">
+          <h2 class="travel-city">Chiang Mai</h2>
+          <p class="travel-note">evening light near the old wall</p>
         </div>
-        <div class="archive-item">
-          <span class="archive-date">2026.02.27</span>
-          <span class="archive-title">창가에 머물던 오후 빛</span>
+        <div class="travel-thumb">
+          <img src="/assets/images/recent-2.jpg" alt="Chiang Mai">
         </div>
-      </div>
+      </a>
+
+      <a href="/travel/paris-1.html" class="travel-item">
+        <div class="travel-text">
+          <h2 class="travel-city">Paris</h2>
+          <p class="travel-note">a slow walk after rain</p>
+        </div>
+        <div class="travel-thumb">
+          <img src="/assets/images/travel/paris-1.jpg" alt="Paris">
+        </div>
+      </a>
+
+      <a href="/travel/bangkok-1.html" class="travel-item">
+        <div class="travel-text">
+          <h2 class="travel-city">Bangkok</h2>
+          <p class="travel-note">heat, traffic, and night air</p>
+        </div>
+        <div class="travel-thumb">
+          <img src="/assets/images/travel/bangkok-1.jpg" alt="Bangkok">
+        </div>
+      </a>
+
+      <a href="/travel/tokyo-1.html" class="travel-item">
+        <div class="travel-text">
+          <h2 class="travel-city">Tokyo</h2>
+          <p class="travel-note">small alleys and warm light</p>
+        </div>
+        <div class="travel-thumb">
+          <img src="/assets/images/travel/tokyo-1.jpg" alt="Tokyo">
+        </div>
+      </a>
+
     </section>
 
-    <!-- 하단 푸터 -->
-    <footer class="page-footer">
-      <p>© 2026 Lavie H · all rights reserved.</p>
-    </footer>
-
-  </div>
-
-  <script src="/assets/js/menu.js"></script>
+    <div class="travel-footer">
+      <a href="/">← Home으로 돌아가기</a>
+    </div>
+  </main>
 
 </body>
 </html>
