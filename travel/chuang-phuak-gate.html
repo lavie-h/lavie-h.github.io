@@ -18,7 +18,7 @@
     body{
       background:#f7f4ef;
       color:#1f1f1b;
-      font-family: "Georgia", "Times New Roman", serif;
+      font-family:"Georgia","Times New Roman",serif;
       line-height:1.75;
     }
 
@@ -29,6 +29,7 @@
 
     img{
       display:block;
+      width:100%;
       max-width:100%;
       height:auto;
     }
@@ -64,20 +65,39 @@
     .detail-page{
       max-width:980px;
       margin:0 auto;
-      padding:32px 24px 100px;
+      padding:24px 24px 100px;
+    }
+
+    .detail-back-top{
+      max-width:720px;
+      margin:0 auto 22px;
+      font-size:14px;
+      color:#6d655d;
+    }
+
+    .detail-back-top:hover{
+      opacity:0.65;
+    }
+
+    .detail-photo-main{
+      max-width:720px;
+      margin:0 auto 36px;
+      border-radius:18px;
+      overflow:hidden;
+      background:#ddd5cb;
     }
 
     .detail-head{
       max-width:720px;
       margin:0 auto 40px;
+      text-align:center;
     }
 
     .detail-category{
       margin:0 0 14px;
-      font-size:12px;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      color:#7f786f;
+      font-size:14px;
+      letter-spacing:0.04em;
+      color:#9a8574;
     }
 
     .detail-title{
@@ -86,22 +106,20 @@
       line-height:1.15;
       font-weight:500;
       letter-spacing:-0.03em;
+      color:#3a312c;
     }
 
     .detail-date{
-      margin:18px 0 0;
+      margin:16px 0 0;
       font-size:14px;
       color:#8a847c;
     }
 
-    .detail-photo{
+    .detail-divider{
       max-width:720px;
-      margin:0 auto 44px;
-    }
-
-    .detail-photo img{
-      max-width:720px;
-      margin:0 auto 56px;
+      margin:0 auto 34px;
+      border:none;
+      border-top:1px solid #ddd5cb;
     }
 
     .detail-body{
@@ -119,6 +137,64 @@
       font-size:21px;
       line-height:1.9;
       color:#1f1f1b;
+      margin-bottom:32px;
+    }
+
+    .detail-photo{
+      margin:36px 0 12px;
+      border-radius:12px;
+      overflow:hidden;
+      background:#ddd5cb;
+    }
+
+    .detail-caption{
+      margin:0 0 34px;
+      text-align:center;
+      font-size:13px;
+      color:#7f786f;
+    }
+
+    .detail-quote{
+      margin:36px 0;
+      padding:28px 20px;
+      border-top:1px solid #ddd5cb;
+      border-bottom:1px solid #ddd5cb;
+      text-align:center;
+      font-size:17px;
+      line-height:1.9;
+      color:#4a433c;
+    }
+
+    .detail-subtitle{
+      margin:10px 0 24px;
+      font-size:42px;
+      line-height:1.2;
+      font-weight:500;
+      letter-spacing:-0.03em;
+      color:#3a312c;
+    }
+
+    .detail-bottom{
+      max-width:720px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:28px;
+      align-items:start;
+      padding-top:6px;
+    }
+
+    .detail-side-gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .detail-side-gallery figure{
+      margin:0;
+      border-radius:12px;
+      overflow:hidden;
+      background:#ddd5cb;
     }
 
     .detail-footer{
@@ -157,8 +233,23 @@
         padding:20px 16px 72px;
       }
 
+      .detail-back-top{
+        margin-bottom:18px;
+        font-size:13px;
+      }
+
+      .detail-photo-main{
+        margin-bottom:24px;
+        border-radius:14px;
+      }
+
       .detail-head{
         margin-bottom:24px;
+      }
+
+      .detail-category{
+        font-size:13px;
+        margin-bottom:10px;
       }
 
       .detail-title{
@@ -171,12 +262,8 @@
         font-size:13px;
       }
 
-      .detail-photo{
-        margin-bottom:28px;
-      }
-
-      .detail-photo img{
-        max-height:none;
+      .detail-divider{
+        margin-bottom:24px;
       }
 
       .detail-body p{
@@ -187,6 +274,32 @@
 
       .detail-body p.lead{
         font-size:18px;
+        margin-bottom:24px;
+      }
+
+      .detail-caption{
+        font-size:12px;
+        margin-bottom:26px;
+      }
+
+      .detail-quote{
+        margin:28px 0;
+        padding:22px 12px;
+        font-size:16px;
+      }
+
+      .detail-subtitle{
+        margin-top:0;
+        font-size:30px;
+      }
+
+      .detail-bottom{
+        grid-template-columns:1fr;
+        gap:20px;
+      }
+
+      .detail-side-gallery{
+        gap:10px;
       }
 
       .detail-footer{
@@ -210,39 +323,78 @@
   </header>
 
   <main class="detail-page">
+    <a href="/" class="detail-back-top">← Travel</a>
+
+    <figure class="detail-photo-main">
+      <img src="/assets/images/recent-2.jpg" alt="창푸악 게이트의 저녁 풍경">
+    </figure>
+
     <section class="detail-head">
-      <p class="detail-category">Travel · Chiang Mai</p>
-      <h1 class="detail-title">창푸악 게이트</h1>
-      <p class="detail-date">2026. 1</p>
+      <p class="detail-category">Chiang Mai</p>
+      <h1 class="detail-title">창푸악 게이트를 지나 걷던 저녁</h1>
+      <p class="detail-date">2026.02.03</p>
     </section>
 
-    <figure class="detail-photo">
-      <img src="/assets/images/recent-2.jpg" alt="창푸악 게이트">
-    </figure>
+    <hr class="detail-divider" />
 
     <article class="detail-body">
       <p class="lead">
-        치앙마이 북문 근처를 천천히 걷다가 창푸악 게이트 앞에 잠시 멈췄다.
-        화려하게 꾸며진 장소는 아니었지만, 오히려 그래서 더 오래 눈에 남았다.
+        해가 완전히 지기 전의 치앙마이는 생각보다 더 조용했고,
+        골목 안쪽으로 들어갈수록 천천히 걷고 싶은 공기가 있었다.
+      </p>
+
+      <figure class="detail-photo">
+        <img src="/assets/images/travel/chiangmai-1.jpg" alt="성벽 근처를 걷는 저녁 풍경">
+      </figure>
+      <p class="detail-caption">성벽 근처를 천천히 걷던 시간.</p>
+
+      <p>
+        처음에는 그냥 북문 근처를 조금만 걷다 돌아올 생각이었다.
+        그런데 창푸악 게이트 주변은 이상하게 오래 머물게 되는 장면이 많았다.
+        지나가는 오토바이 소리, 하나둘 켜지는 노점의 불빛,
+        급하지 않게 흘러가던 사람들의 속도까지 모두 낯설면서도 편안했다.
       </p>
 
       <p>
-        낮의 공기는 느긋했고, 성벽 주변은 생각보다 조용했다.
-        사람들은 각자의 속도로 지나가고 있었고,
-        여행지에서만 느껴지는 묘한 여유가 이곳에 머물러 있었다.
+        여행지에서는 늘 유명한 장소보다 그 사이의 시간이 더 오래 남는다.
+        어디를 향해 가는지보다, 어디에도 도착하지 않은 상태로 걷고 있는 순간이 좋았다.
+        창푸악 게이트의 저녁은 바로 그런 감각을 붙잡아두는 장소였다.
       </p>
 
-      <p>
-        밤이 되면 분위기는 조금 달라진다.
-        주변 노점에 불이 켜지고, 가볍게 저녁을 해결하려는 사람들로 조금씩 채워진다.
-        여행의 기억은 거대한 장면보다 이렇게 소소한 풍경 속에 남는 것 같았다.
-      </p>
-
-      <p>
-        특별한 목적 없이 걷다가 만난 장소.
-        그래서 더 좋았던 곳.
-      </p>
+      <div class="detail-quote">
+        “기억에 남는 여행은 거대한 장면보다,<br>
+        그날의 공기와 걷는 속도를 같이 데려온다.”
+      </div>
     </article>
+
+    <section class="detail-bottom">
+      <div class="detail-body" style="max-width:none; margin:0;">
+        <h2 class="detail-subtitle">다시 가게 된다면</h2>
+
+        <p>
+          다시 치앙마이에 가게 된다면 더 많은 곳을 보려고 하기보다는,
+          이번에 좋았던 시간대를 다시 걷고 싶다.
+          한낮보다는 저녁 직전, 무언가를 소비하기보다는
+          가만히 지나가는 풍경을 보고 싶은 도시였다.
+        </p>
+
+        <p>
+          여행 기록을 남길 때마다 느끼는 건,
+          결국 장소 자체보다 그때의 나를 같이 적게 된다는 점이다.
+          그래서 이 페이지는 치앙마이에 대한 기록이면서,
+          동시에 그날의 느린 마음에 대한 기록이기도 하다.
+        </p>
+      </div>
+
+      <div class="detail-side-gallery">
+        <figure>
+          <img src="/assets/images/travel/chiangmai-2.jpg" alt="저녁 무렵의 거리 조명">
+        </figure>
+        <figure>
+          <img src="/assets/images/travel/chiangmai-3.jpg" alt="창푸악 게이트 주변 노점 풍경">
+        </figure>
+      </div>
+    </section>
 
     <div class="detail-footer">
       <a href="/" class="detail-back">← Home으로 돌아가기</a>
