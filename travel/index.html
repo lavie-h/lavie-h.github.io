@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel | Lavie H</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    html, body{
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      background:#f7f4ef;
+      color:#1f1f1b;
+      font-family:"Georgia","Times New Roman",serif;
+      line-height:1.6;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .top-header{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      padding:28px 36px;
+    }
+
+    .brand-title{
+      display:block;
+      font-size:22px;
+      letter-spacing:0.08em;
+      margin-bottom:4px;
+    }
+
+    .brand-tagline{
+      margin:0;
+      font-size:12px;
+      color:#8b847c;
+    }
+
+    .top-nav{
+      display:flex;
+      gap:36px;
+      padding-top:8px;
+      font-size:15px;
+    }
+
+    .travel-page{
+      max-width:980px;
+      margin:0 auto;
+      padding:40px 24px 100px;
+    }
+
+    .travel-intro{
+      text-align:center;
+      margin:20px 0 80px;
+    }
+
+    .travel-intro h1{
+      margin:0;
+      font-size:54px;
+      font-weight:500;
+      letter-spacing:0.08em;
+      color:#9d8065;
+    }
+
+    .travel-intro p{
+      margin:12px 0 0;
+      font-size:22px;
+      font-style:italic;
+      color:#4a4038;
+    }
+
+    .travel-list{
+      border-top:1px solid #ddd5cb;
+    }
+
+    .travel-item{
+      display:grid;
+      grid-template-columns:1.4fr 0.8fr;
+      gap:36px;
+      align-items:center;
+      padding:52px 0;
+      border-bottom:1px solid #ddd5cb;
+      transition:opacity 0.25s ease;
+    }
+
+    .travel-item:hover{
+      opacity:0.86;
+    }
+
+    .travel-text{
+      min-width:0;
+    }
+
+    .travel-city{
+      margin:0 0 14px;
+      font-size:68px;
+      line-height:1.04;
+      font-weight:500;
+      letter-spacing:-0.04em;
+      color:#2f2722;
+    }
+
+    .travel-note{
+      margin:0;
+      font-size:24px;
+      line-height:1.5;
+      font-style:italic;
+      color:#8b7663;
+    }
+
+    .travel-thumb{
+      width:100%;
+      aspect-ratio:16 / 10;
+      border-radius:16px;
+      overflow:hidden;
+      background:#ddd5cb;
+    }
+
+    .travel-thumb img{
+      transition:transform 0.45s ease;
+    }
+
+    .travel-item:hover .travel-thumb img{
+      transform:scale(1.03);
+    }
+
+    .travel-footer{
+      margin-top:48px;
+      font-size:15px;
+      color:#5f574f;
+    }
+
+    .travel-footer a:hover{
+      opacity:0.65;
+    }
+
+    @media (max-width: 900px){
+      .travel-city{
+        font-size:56px;
+      }
+
+      .travel-note{
+        font-size:21px;
+      }
+    }
+
+    @media (max-width: 768px){
+      .top-header{
+        padding:22px 20px;
+        align-items:flex-start;
+      }
+
+      .brand-title{
+        font-size:18px;
+      }
+
+      .top-nav{
+        gap:18px;
+        padding-top:4px;
+        font-size:14px;
+      }
+
+      .travel-page{
+        padding:24px 16px 72px;
+      }
+
+      .travel-intro{
+        margin:10px 0 44px;
+      }
+
+      .travel-intro h1{
+        font-size:34px;
+      }
+
+      .travel-intro p{
+        font-size:18px;
+      }
+
+      .travel-item{
+        grid-template-columns:1fr;
+        gap:18px;
+        padding:28px 0;
+      }
+
+      .travel-city{
+        margin-bottom:8px;
+        font-size:40px;
+        line-height:1.08;
+      }
+
+      .travel-note{
+        font-size:18px;
+        line-height:1.55;
+      }
+
+      .travel-thumb{
+        aspect-ratio:16 / 10;
+        border-radius:12px;
+      }
+
+      .travel-footer{
+        margin-top:32px;
+        font-size:14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-header">
+    <div class="brand">
+      <a href="/" class="brand-title">LAVIE H</a>
+      <p class="brand-tagline">a quiet archive</p>
+    </div>
+
+    <nav class="top-nav">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/travel/">Travel</a>
+    </nav>
+  </header>
+
+  <main class="travel-page">
+    <section class="travel-intro">
+      <h1>TRAVEL</h1>
+      <p>cities I remember</p>
+    </section>
+
+    <section class="travel-list">
+
+      <a href="/travel/chiang-mai-1.html" class="travel-item">
+        <div class="travel-text">
+          <h2 class="travel-city">Chiang Mai</h2>
+          <p class="travel-note">evening light near the old wall</p>
+        </div>
+        <div class="travel-thumb">
+          <img src="/assets/images/recent-2.jpg" alt="Chiang Mai">
+        </div>
+      </a>
+
+      <a href="/travel/paris-1.html" class="travel-item">
+        <div class="travel-text">
+          <h2 class="travel-city">Paris</h2>
+          <p class="travel-note">a slow walk after rain</p>
+        </div>
+        <div class="travel-thumb">
+          <img src="/assets/images/travel/paris-1.jpg" alt="Paris">
+        </div>
+      </a>
+
+      <a href="/travel/bangkok-1.html" class="travel-item">
+        <div class="travel-text">
+          <h2 class="travel-city">Bangkok</h2>
+          <p class="travel-note">heat, traffic, and night air</p>
+        </div>
+        <div class="travel-thumb">
+          <img src="/assets/images/travel/bangkok-1.jpg" alt="Bangkok">
+        </div>
+      </a>
+
+      <a href="/travel/tokyo-1.html" class="travel-item">
+        <div class="travel-text">
+          <h2 class="travel-city">Tokyo</h2>
+          <p class="travel-note">small alleys and warm light</p>
+        </div>
+        <div class="travel-thumb">
+          <img src="/assets/images/travel/tokyo-1.jpg" alt="Tokyo">
+        </div>
+      </a>
+
+    </section>
+
+    <div class="travel-footer">
+      <a href="/">← Home으로 돌아가기</a>
+    </div>
+  </main>
+
+</body>
+</html>
