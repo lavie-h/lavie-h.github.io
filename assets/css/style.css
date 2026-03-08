@@ -981,3 +981,8 @@ header.top-header nav.top-nav a{
     gap: 6px;
   }
 }
+.card{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
