@@ -9,56 +9,42 @@
 
 <style>
 
-/* ===== Travel Page Layout ===== */
-
 .travel-page{
-  max-width:1100px;
+  max-width:1000px;
   margin:0 auto;
   padding:60px 24px 100px;
 }
 
-/* hero */
-
-.travel-hero{
+.travel-header{
   margin-bottom:60px;
 }
 
-.travel-eyebrow{
-  font-size:12px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:#888;
-  margin-bottom:10px;
-}
-
-.travel-hero h1{
-  font-size:72px;
+.travel-header h1{
+  font-size:64px;
   font-weight:500;
-  letter-spacing:-0.03em;
   margin:0;
 }
 
 .travel-intro{
-  margin-top:18px;
-  max-width:520px;
-  font-size:16px;
-  line-height:1.8;
+  margin-top:12px;
   color:#666;
 }
 
-/* ===== Travel List ===== */
+/* 리스트 */
 
 .travel-list{
   border-top:1px solid #ddd;
 }
 
-.travel-entry{
+.travel-item{
 
   display:grid;
-  grid-template-columns:1.2fr 1fr;
+  grid-template-columns:220px 1fr;
   gap:30px;
 
-  padding:30px 0;
+  align-items:center;
+
+  padding:28px 0;
 
   border-bottom:1px solid #ddd;
 
@@ -68,59 +54,49 @@
   transition:opacity .25s ease;
 }
 
-.travel-entry:hover{
-  opacity:0.65;
+.travel-item:hover{
+  opacity:0.7;
 }
 
-/* left */
+/* 이미지 */
 
-.travel-entry-main h2{
-  font-size:42px;
-  font-weight:500;
+.travel-thumb img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:4px;
+}
+
+/* 텍스트 */
+
+.travel-city{
+  font-size:36px;
   margin:0;
+  font-weight:500;
 }
 
 .travel-meta{
-  margin-top:8px;
+  margin-top:6px;
   font-size:12px;
-  letter-spacing:0.1em;
+  letter-spacing:0.08em;
   text-transform:uppercase;
   color:#888;
 }
 
-/* right */
-
-.travel-desc{
-  font-size:15px;
-  line-height:1.8;
-  color:#555;
-  max-width:360px;
-  justify-self:end;
-}
-
-/* ===== Mobile ===== */
+/* 모바일 */
 
 @media (max-width:768px){
 
-.travel-page{
-  padding:30px 20px 60px;
-}
-
-.travel-hero h1{
-  font-size:42px;
-}
-
-.travel-entry{
+.travel-item{
   grid-template-columns:1fr;
-  gap:12px;
+  gap:14px;
 }
 
-.travel-desc{
-  justify-self:start;
-  max-width:none;
+.travel-thumb img{
+  height:200px;
 }
 
-.travel-entry-main h2{
+.travel-city{
   font-size:28px;
 }
 
@@ -150,72 +126,69 @@
 
 <main class="travel-page">
 
-<section class="travel-hero">
+<section class="travel-header">
 
-<p class="travel-eyebrow">Archive</p>
 <h1>Travel</h1>
-
-<p class="travel-intro">
-도시를 지나며 남겨둔 장면과 감정들.
-</p>
+<p class="travel-intro">도시를 지나며 남겨둔 기록들</p>
 
 </section>
 
 
 <section class="travel-list">
 
-<a href="/travel/chiangmai.html" class="travel-entry">
 
-<div class="travel-entry-main">
-<h2>Chiang Mai</h2>
+<a href="/travel/chiangmai.html" class="travel-item">
+
+<div class="travel-thumb">
+<img src="/assets/images/travel/chiangmai.jpg" alt="Chiang Mai">
+</div>
+
+<div>
+<h2 class="travel-city">Chiang Mai</h2>
 <p class="travel-meta">Thailand · 2024</p>
 </div>
 
-<p class="travel-desc">
-old city의 느린 공기와 저녁 시장의 온도.
-</p>
-
 </a>
 
 
-<a href="/travel/paris.html" class="travel-entry">
+<a href="/travel/paris.html" class="travel-item">
 
-<div class="travel-entry-main">
-<h2>Paris</h2>
+<div class="travel-thumb">
+<img src="/assets/images/travel/paris.jpg" alt="Paris">
+</div>
+
+<div>
+<h2 class="travel-city">Paris</h2>
 <p class="travel-meta">France · 2023</p>
 </div>
 
-<p class="travel-desc">
-걷는 시간만으로도 충분했던 거리와 빛.
-</p>
-
 </a>
 
 
-<a href="/travel/tokyo.html" class="travel-entry">
+<a href="/travel/tokyo.html" class="travel-item">
 
-<div class="travel-entry-main">
-<h2>Tokyo</h2>
+<div class="travel-thumb">
+<img src="/assets/images/travel/tokyo.jpg" alt="Tokyo">
+</div>
+
+<div>
+<h2 class="travel-city">Tokyo</h2>
 <p class="travel-meta">Japan · 2024</p>
 </div>
 
-<p class="travel-desc">
-정돈된 리듬 속에서 발견한 작고 선명한 장면들.
-</p>
-
 </a>
 
 
-<a href="/travel/bangkok.html" class="travel-entry">
+<a href="/travel/bangkok.html" class="travel-item">
 
-<div class="travel-entry-main">
-<h2>Bangkok</h2>
-<p class="travel-meta">Thailand · 2022</p>
+<div class="travel-thumb">
+<img src="/assets/images/travel/bangkok.jpg" alt="Bangkok">
 </div>
 
-<p class="travel-desc">
-습한 공기와 강한 색이 뒤섞인 밤의 도시.
-</p>
+<div>
+<h2 class="travel-city">Bangkok</h2>
+<p class="travel-meta">Thailand · 2022</p>
+</div>
 
 </a>
 
