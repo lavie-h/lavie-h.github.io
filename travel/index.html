@@ -55,10 +55,10 @@
     }
 
     .travel-thumb img{
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      display: block;
+      width:100%;
+      aspect-ratio:4/3;
+      object-fit:cover;
+      display:block;
     }
 
     .travel-city{
@@ -109,6 +109,19 @@
         line-height: 1.75;
       }
     }
+    .travel-back-home{
+     display:inline-block;
+     margin-top:60px;
+     font-size:14px;
+     color:#222;
+     text-decoration:none;
+     border-bottom:1px solid #222;
+     padding-bottom:2px;
+    }
+
+.travel-back-home:hover{
+  opacity:0.6;
+}
   </style>
 </head>
 <body>
@@ -176,6 +189,7 @@
         </div>
       </a>
     </section>
+      <a href="/" class="travel-back-home">Back to Home</a>
   </main>
 </body>
 </html>
