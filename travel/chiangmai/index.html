@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chiang Mai | Lavie H</title>
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+    .city-page{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+    }
+
+    .city-hero{
+      margin: 10px 0 44px;
+    }
+
+    .city-hero img{
+      width: 100%;
+      height: 52vh;
+      min-height: 300px;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .city-header{
+      max-width: 760px;
+      margin-bottom: 52px;
+    }
+
+    .city-title{
+      margin: 0;
+      font-size: clamp(44px, 7vw, 76px);
+      line-height: 1.05;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    .city-desc{
+      margin: 14px 0 0;
+      font-size: 15px;
+      line-height: 1.85;
+      color: #666;
+    }
+
+    .chapter{
+      margin-bottom: 56px;
+    }
+
+    .chapter-title{
+      margin: 0 0 20px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .spot-list{
+      border-top: 1px solid #ddd;
+    }
+
+    .spot-item{
+      display: grid;
+      grid-template-columns: 120px 70px 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid #ddd;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity .2s ease;
+    }
+
+    .spot-item:hover{
+      opacity: .72;
+    }
+
+    .spot-thumb img{
+      width: 100%;
+      height: 84px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .spot-num{
+      font-size: 15px;
+      letter-spacing: .08em;
+      color: #8a8a8a;
+    }
+
+    .spot-name{
+      margin: 0;
+      font-size: clamp(22px, 3vw, 28px);
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .spot-desc{
+      margin: 6px 0 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: #666;
+    }
+
+    .back-link{
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #222;
+      border-bottom: 1px solid #222;
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 768px){
+      .city-page{
+        padding: 24px 20px 72px;
+      }
+
+      .city-hero{
+        margin: 0 0 28px;
+      }
+
+      .city-hero img{
+        height: 34vh;
+        min-height: 220px;
+      }
+
+      .city-header{
+        margin-bottom: 34px;
+      }
+
+      .chapter{
+        margin-bottom: 36px;
+      }
+
+      .spot-item{
+        grid-template-columns: 1fr;
+        gap: 12px;
+        align-items: start;
+        padding: 18px 0 20px;
+      }
+
+      .spot-thumb img{
+        height: 180px;
+      }
+
+      .spot-num{
+        font-size: 13px;
+      }
+
+      .spot-desc{
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-header">
+    <div class="brand">
+      <a href="/" class="brand-title">Lavie H</a>
+      <p class="brand-tagline">a quiet archive</p>
+    </div>
+
+    <nav class="top-nav">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/travel/">Travel</a>
+    </nav>
+  </header>
+
+  <main class="city-page">
+    <section class="city-hero">
+      <img src="/assets/images/travel/chiangmai/chiangmai-hero.jpg" alt="Chiang Mai city view" />
+    </section>
+
+    <header class="city-header">
+      <h1 class="city-title">Chiang Mai</h1>
+      <p class="city-desc">
+        temples, evening markets, and quiet wandering streets. 
+        크게 기억나는 것은 명소보다도 저녁이 시작되던 시간의 공기와 천천히 걷던 속도였다.
+      </p>
+    </header>
+
+    <section class="chapter">
+      <h2 class="chapter-title">Old City</h2>
+
+      <div class="spot-list">
+        <a href="/travel/chiangmai/chang-phuak-gate.html" class="spot-item">
+          <div class="spot-thumb">
+            <img src="/assets/images/travel/chiangmai/chang-phuak-gate-thumb.jpg" alt="Chang Phuak Gate" />
+          </div>
+          <div class="spot-num">01</div>
+          <div class="spot-text">
+            <h3 class="spot-name">Chang Phuak Gate</h3>
+            <p class="spot-desc">성벽 주변에 저녁 빛이 천천히 내려앉던 시간과 시장의 온도.</p>
+          </div>
+        </a>
+
+        <a href="/travel/chiangmai/tha-phae-gate.html" class="spot-item">
+          <div class="spot-thumb">
+            <img src="/assets/images/travel/chiangmai/tha-phae-gate-thumb.jpg" alt="Tha Phae Gate" />
+          </div>
+          <div class="spot-num">02</div>
+          <div class="spot-text">
+            <h3 class="spot-name">Tha Phae Gate</h3>
+            <p class="spot-desc">사람이 가장 많이 모이지만 기억은 이상하게 느린 장면으로 남는 곳.</p>
+          </div>
+        </a>
+
+        <a href="/travel/chiangmai/old-town.html" class="spot-item">
+          <div class="spot-thumb">
+            <img src="/assets/images/travel/chiangmai/old-town-thumb.jpg" alt="Old Town" />
+          </div>
+          <div class="spot-num">03</div>
+          <div class="spot-text">
+            <h3 class="spot-name">Old Town</h3>
+            <p class="spot-desc">골목과 사원이 이어지고 여행보다 생활에 가까운 풍경을 마주하게 되는 구역.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <h2 class="chapter-title">West Side</h2>
+
+      <div class="spot-list">
+        <a href="/travel/chiangmai/nimmanhaemin.html" class="spot-item">
+          <div class="spot-thumb">
+            <img src="/assets/images/travel/chiangmai/nimmanhaemin-thumb.jpg" alt="Nimmanhaemin" />
+          </div>
+          <div class="spot-num">04</div>
+          <div class="spot-text">
+            <h3 class="spot-name">Nimmanhaemin</h3>
+            <p class="spot-desc">정돈된 리듬과 카페, 상점, 저녁 산책이 잘 어울리는 조금 다른 결의 치앙마이.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <a href="/travel/" class="back-link">Back to Travel</a>
+  </main>
+</body>
+</html>
